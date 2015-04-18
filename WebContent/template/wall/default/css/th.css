@@ -1,0 +1,9 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+ul,li{list-style:none;}
+img{border:0px;}
+a{text-decoration:none;}
+body{background:#fafbfd;}
+.s_main{width:96%;background:#fafbfd;}
+.s_cont{width:68%;margin:auto;margin-top:25%;}
+.s_main p{font-size:60px;color:#5d6b7f;text-align:center;width:90%;font-family:"黑体";margin:auto;margin-top:60px;}

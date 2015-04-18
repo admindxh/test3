@@ -1,0 +1,22 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+ul,li{list-style:none;}
+img{border:0px;}
+a{text-decoration:none;}
+body{background:url(../imgs/wood1.jpg) repeat;font-family:"黑体";}
+.t_main{width:96%;border-radius:10px;background:#fff;margin:auto;margin-top:5px;}
+.mit{padding:15px 15px 5px 15px;font-size:18px;}
+.tim{text-align:left;font-size:12px;color:#55585e;padding-left:15px;}
+.cont{padding:15px;}
+.t_main h3{}
+.fot{background:#f6f6f6;margin-top:10px;text-align:center;color:#55585f;border-top:1px #ccc solid;border-bottom:1px #ccc solid;line-height:30px;height:30px;}
+.fot span{font-weight:bold;color:#000;}
+.ptit{margin-top:15px;}
+.ptit label{display:inline-block;}
+.ptit .jd1{padding:5%;width:35%;display:inline-block;text-align:right;color:#cd9705;}
+.ptit .pl{border-bottom:1px #ccc dotted;margin-bottom:10px;}
+.ptit .pl span{display:inline-block;width:55%;padding:5% 0px;text-align:left;}
+.pl span i{display:inline-block;width:100%;background:#e6e6e6;height:12px;border-radius:6px;box-shadow:inset 0px 0px 3px #969595;}
+.t_btn{width:96%;height:40px;margin:auto;}
+.t_btn .nb{width:100%;height:40px;background:#EC7063;border:none;border-radius:5px;color:#fff;font-size:14px;}
+.t_btn .nb:hover{background:#bd5a4f;}
