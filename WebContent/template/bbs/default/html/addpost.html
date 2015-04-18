@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="" name="Keywords">
+	<meta content="" name="Description">
+    <title>微社区</title>
+	<link rel="shortcut icon" href="http://stc.weimob.com/img/favicon.ico" />
+    <!--[if lte IE 9]><script src="http://stc.weimob.com/src/watermark.js"></script><![endif]-->
+	<!--[if IE 7]><link href="http://stc.weimob.com/css/font_awesome_ie7.css" rel="stylesheet" /><![endif]-->
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="eric.wu" name="author">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="${bbsData.base}/css/main.css" ></link>
+		<link rel="stylesheet" type="text/css" href="${bbsData.base}/css/dialog.css" ></link>
+		<script src="${bbsData.base}/js/jquery.min.js" ></script>
+		<script src="${bbsData.base}/js/swipe.js" ></script>
+		<script src="${bbsData.base}/js/main.js" ></script>
+		<script src="${bbsData.base}/js/dialog_min.js" ></script>
+		<script src="${bbsData.base}/js/helper_min.js" ></script>
+		<script src="${bbsData.base}/js/pics.js" ></script>
+		<script src="${bbsData.base}/js/input.js" ></script>
+		<link rel="stylesheet" href="plug-in/uploadify/css/uploadify.css" type="text/css">
+</link>
+<style type="text/css">
+.divX
+{
+    z-index:100;
+    border-style:solid;
+    border-width:1px;
+    border-color:#FF0000;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    background-color:#ffffff;
+    line-height:10px;
+    text-align:center;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:10px;
+    color:red;
+    display: none;
+}
+</style>
+
+<script type="text/javascript" src="plug-in/uploadify/jquery.uploadify-3.1.js">
+</script>
+<script type="text/javascript" src="plug-in/tools/Map.js">
+</script>
+<script type="text/javascript">
+	var flag = false;
+	var fileitem = "";
+	var fileKey = "";
+	var serverMsg = "";
+	var m = new Map();
+	var fileId = '';
+	$(function() {
+		$('#file_upload').uploadify({
+			buttonText: '添加照片',
+			auto: true,
+			progressData: 'speed',
+			multi: true,
+			height: 25,
+			overrideEvents: ['onDialogClose'],
+			fileTypeDesc: '文件格式:',
+			queueID: 'filediv',
+			fileTypeExts: '*.jpg;*.png;',
+			fileSizeLimit: '15MB',
+			queueSizeLimit: 8,
+			removeCompleted: true,
+			removeTimeout: 0.5,
+			swf: 'plug-in/uploadify/uploadify.swf',
+			uploader: 'bbsController.do?uploadPostImg',
+			onSelect: function(){
+
+			},
+			onUploadStart: function(file) {
+				$('#file_upload').uploadify("settings", "formData", {
+				});
+			},
+			onQueueComplete: function(queueData) {
+				//var win = frameElement.api.opener;
+				//win.reloadTable();
+				//win.tip(serverMsg);
+				//frameElement.api.close();
+			},
+			onUploadSuccess: function(file, data, response) {
+				var d = $.parseJSON(data);
+				if (d.success) {
+					var img = '<div id=\"'+d.attributes.fileId+'\"><img name=\"photo\" src=\"'+d.attributes.realPath+'\" width=\"130\" height=\"107\" id=\"'+d.attributes.realPath+'\"/>'
+					img +='<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=\"#\" onclick=\"delPhoto(\''+d.attributes.fileId+'\')\"><img src="${bbsData.base}/images/delp.png"/></a></div></div>'
+					$('#imgList').append(img);
+					$("#fileId").val($("#fileId").val() + d.attributes.fileId + ',');
+					//已上传的照片数量
+					var photoSize = $("img[name=\"photo\"]").size();
+					if (photoSize == 8){
+						$('#file_upload').css('display','none');
+					}
+				}
+			},
+			onFallback: function() {
+				tip("您未安装FLASH控件，无法上传图片！请安装FLASH控件后再试")
+			},
+			onSelectError: function(file, errorCode, errorMsg) {
+				switch (errorCode) {
+				case - 100 : tip("上传的文件数量已经超出系统限制的" + $('#file_upload').uploadify('settings', 'queueSizeLimit') + "个文件！");
+					break;
+				case - 110 : tip("文件 [" + file.name + "] 大小超出系统限制的" + $('#file_upload').uploadify('settings', 'fileSizeLimit') + "大小！");
+					break;
+				case - 120 : tip("文件 [" + file.name + "] 大小异常！");
+					break;
+				case - 130 : tip("文件 [" + file.name + "] 类型不正确！");
+					break;
+				}
+			},
+			onUploadProgress: function(file, bytesUploaded, bytesTotal, totalBytesUploaded, totalBytesTotal) {}
+		});
+	});
+	function upload() {
+		$('#file_upload').uploadify('upload', '*');
+		return flag;
+	}
+	function cancel() {
+		$('#file_upload').uploadify('cancel', '*');
+	}
+	function uploadFile(data){
+  		$('#postId').val(data.attributes.postId)
+  		if($(".uploadify-queue-item").length>0){
+  			upload();
+  		}else{
+  			frameElement.api.opener.reloadTable();
+  			frameElement.api.close();
+  		}
+  	}
+	function delPhoto(id){
+		//删除页面元素
+		$('#'+id).remove();
+		var str= new Array();
+		var newstr = '';
+		var fileId = $('#fileId').val();
+		str = fileId.split(",");
+		for (var i=0;i<str.length ;i++){
+			if (id == str[i]){
+				continue
+			}
+			newstr+=str[i]+','
+		}
+		//删除ID 重新给文本框赋值
+		$("#fileId").val(newstr);
+		//删除物理文件
+		var formData = new Object();
+		formData['id'] = id;
+    	$.ajax({
+        	type:"post",
+        	url:"bbsController.do?delPhoto",
+        	data : formData,
+        	success:function(res){
+        		
+        	}
+    	})
+		//重新启用上传
+    	$('#file_upload').css('display','block');
+	}
+	function submit(){
+		var title = $("#title").val();
+		var form = document.getElementById("form_1");
+		var article = document.getElementById("form_article").innerHTML;
+		document.getElementById("content").value = article;
+		var content = $("#content").val();
+		if(!title) { alert("请输入标题", 2000);return;}
+		if(article.length == 0){
+			alert("请输入评论内容", 2000);return;
+		}
+		//alert($("#content").trim())
+		//form.submit();
+		var fileId = $('#fileId').val()
+		var formData = new Object();
+		formData['title'] = title;
+		formData['content'] = content;
+		formData['fileId'] = fileId;
+    	$.ajax({
+        	type:"post",
+        	url:"bbsController.do?save",
+        	data : formData,
+        	success:function(res){
+        		window.location.href="bbsController.do?goPage&page=index";
+        	}
+    	})
+	}
+	
+</script>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;" class="discuss_comment">
+		<div id="container" class="container">
+			<header></header>
+			<div class="body">
+				<form action="bbsController.do?save" id="form_1" method="post" enctype="multipart/form-data" >
+					<section class="form_comment">
+						<header>
+							<ul class="tbox">
+								<li>
+									<label class="title">发帖</label>
+								</li>
+								<li class="align_right">
+									<a href="javascript:history.go(-1);" class="cancel">取消</a>
+								</li>
+							</ul>
+						</header>
+						<input id="title" class="form_title" type="text" name="title" maxlength="50" placeholder="标题" />
+						<article id="form_article" contenteditable="true" onpaste="myInput.listen(this, event);" onkeydown="myInput.listen(this, event);" oninput="myInput.listen(this, event);" placeholder="说点什么..." maxlength="10" ></article>
+						<input id="content" name="content" type="hidden" value="">
+						<footer>
+							<div class="align_right">
+								<label id="form_count">500 字</label>
+							</div>
+						</footer>
+					</section>
+					<section class="form_pic_emotion">
+						<div>
+							<nav>
+								<ul id="nav_nav">
+									<li>
+										<a href="javascript:;" onclick="switchPage(this, 0);" class="on"><span class="icons icons_pic">&nbsp;</span></a>
+									</li>
+									<li>
+										<a href="javascript:;" onclick="switchPage(this, 1);"><span class="icons icons_emotion">&nbsp;</span></a>	
+									</li>
+								</ul>
+							</nav>
+						</div>
+						<div>
+							<ul class="page_pic_emotion clear" id="nav_page">
+								<span id="file_uploadspan">
+								<input type="file" name="fiels" id="file_upload" />最多可上传8张图片
+								</span>
+								<div class="form" id="filediv"></div>
+							</ul>
+							<div id="imgList">
+							</div>
+							<input type="hidden" id="fileId" name="fileId" />
+						</div>
+					</section>
+
+				</form>
+			</div>
+			<footer>
+				<section class="nav_footer">
+					<ul class="box">
+						<li>
+							<a href="javascript:submit();" class="on" style="font-size:18px;width:120px;">
+								<span class="icons_publish">&nbsp;</span>
+								<label class="pre">发  布</label>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</footer>
+		</div>
+	</body>
+	<script>
+    	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    });
+	</script>
+</html>
+</body>
+<script type="text/javascript">
+(function() {
+	var wtj = document.createElement('script'); wtj.type = 'text/javascript'; wtj.async = true;
+	wtj.src = 'http://tj.weimob.com/wtj.js?url=' + encodeURIComponent(location.href);
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(wtj, s);
+})();
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd80741dd59de91e1846b2add2c0ad2a2' type='text/javascript'%3E%3C/script%3E"));
+function weimobAfterShare(shareFromWechatId,sendFriendLink,shareToPlatform){
+	var wmShare = document.createElement('script'); wmShare.type = 'text/javascript'; wmShare.async = true;
+    wmShare.src = 'http://tj.weimob.com/api-share.js?fromWechatId=' + shareFromWechatId + '&shareToPlatform=';
+	wmShare.src += shareToPlatform + '&pid=1071&sendFriendLink=' + encodeURIComponent(sendFriendLink);
+    var stj = document.getElementsByTagName('script')[0]; stj.parentNode.insertBefore(wmShare, stj);
+}
+
+/**
+ * 默认分享出去的数据
+ *
+ */
+function getShareImageUrl(){
+
+	var share_imgurl = "";
+	if("" == share_imgurl){
+		var shareImgObj = document.getElementsByClassName("shareImgUrl")[0];
+		if('undefined' != typeof(shareImgObj)){
+			share_imgurl = shareImgObj.src;
+		}
+	}
+	return window.shareData.imgUrl || share_imgurl;
+}
+
+window.shareData = window.shareData || {
+		"timeLineLink": "http://1071.m.weimob.com/snsmobile/newtrends?pid=1071&uid=234186&exa_trends=0",
+	"sendFriendLink": "http://1071.m.weimob.com/snsmobile/newtrends?pid=1071&uid=234186&exa_trends=0",
+	"weiboLink": "http://1071.m.weimob.com/snsmobile/newtrends?pid=1071&uid=234186&exa_trends=0",
+	"tTitle": document.title,
+	"tContent": document.title,
+	"fTitle": document.title,
+	"fContent": document.title,
+	"wContent": document.title
+}
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	// 发送给好友
+	WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+		WeixinJSBridge.invoke('sendAppMessage', { 
+			"img_url": getShareImageUrl(),
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.sendFriendLink,
+			"desc": window.shareData.fContent,
+			"title": window.shareData.fTitle
+		}, function (res) {
+			if('send_app_msg:cancel' != res.err_msg){
+				weimobAfterShare("",window.shareData.sendFriendLink,'appmessage');
+			}
+			_report('send_msg', res.err_msg);
+		})
+	});
+
+	// 分享到朋友圈
+	WeixinJSBridge.on('menu:share:timeline', function (argv) {
+		WeixinJSBridge.invoke('shareTimeline', {
+			"img_url": getShareImageUrl(),
+			"img_width": "640",
+			"img_height": "640",
+			"link": window.shareData.timeLineLink,
+			"desc": window.shareData.tContent,
+			"title": window.shareData.tTitle
+		}, function (res) {
+			if('share_timeline:cancel' != res.err_msg){
+				//如果用户没有取消
+				weimobAfterShare("",window.shareData.timeLineLink,'timeline');
+			}
+			_report('timeline', res.err_msg);
+		});
+	});
+
+	// 分享到微博
+	WeixinJSBridge.on('menu:share:weibo', function (argv) {
+		WeixinJSBridge.invoke('shareWeibo', {
+			"content": window.shareData.wContent,
+			"url": window.shareData.weiboLink
+		}, function (res) {
+			if('share_weibo:cancel' != res.err_msg){
+				weimobAfterShare("",window.shareData.weiboLink,'weibo');
+			}
+			_report('weibo', res.err_msg);
+		});
+	});
+}, false);
+</script>
+<script type="text/javascript" src="http://kf.weimob.com/js/ChatFloat.js"></script>
+<script type="text/javascript">
+var str_domain = location.href.split('/',4)[2];
+var boolIsTest = true;
+if(str_domain == 'www.weimob.com' || str_domain.indexOf('m.weimob.com') > 0){
+	boolIsTest = false;
+}
+new ChatFloat({
+        AId: '1071',
+        openid: "",
+		top:150,
+		right:0,
+		IsTest:boolIsTest
+});
+</script>
+</html>

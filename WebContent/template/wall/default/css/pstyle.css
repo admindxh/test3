@@ -1,0 +1,38 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+ul,li{list-style:none;}
+img{border:0px;}
+a{text-decoration:none;}
+body{font-family:Verdana, Geneva, sans-serif "黑体";}
+.w100{width:100%;}
+.p_main{width:100%;margin:auto;}
+.p_top{height:100px;clear:both;overflow:hidden;white-space:nowrap;background:#eaedf1;padding:10px 2% 2% 10px;}
+.p_img{width:31%;height:100px;overflow:hidden;float:left;}
+.p_img img{width:100px;height:100px;border-radius:50px;overflow:hidden;}
+.p_name{float:left;height:85px;min-width:60%;padding-top:15px;margin-left:5%;}
+.p_name h1{color:#5e6d81;font-size:25px;font-weight:400;text-align:left;}
+.p_name span{color:#9ea7b3;font-size:16px;}
+.p_name span span{color:#1fbba6;font-size:16px;}
+.p_name span i{vertical-align:middle;background:#ccc;display:inline-block;width:40%;height:15px;}
+.p_name span i span{width:50%;height:15px;display:inline-block;background:#1fbba6;}
+.p_cont{background:#fff;}
+.p_cont ul{overflow:hidden;}
+.p_cont ul li{border-bottom:1px #eaedf1 solid;line-height:40px;padding:0px 10px;overflow:hidden;clear:both;zoom:1;}
+.p_cont ul li span{float:right;margin-right:5px;border-radius:10px;line-height:20px;background:#f27935;color:#fff;padding:0px 10px;margin-top:10px;}
+.p_cont ul li i{float:right;margin-right:5px;color:#1fbba6;}
+.jbtn{width:90%;margin:auto;background:#1fbba6;height:40px;color:#fff;margin-top:25px;border-radius:5px;text-align:center;line-height:40px;}
+.jbtn:hover{background:#1a9c8b;}
+/*奖品*/
+.list1{margin:10px 10px;border-bottom:1px #ccc dotted;overflow:hidden;clear:both;zoom:1;}
+.d_img{float:left;width:30%;overflow:hidden;padding:2%;}
+.d_img img{max-with:324px;}
+.d_tit{float:left;width:63%;padding-top:9px;overflow:hidden;white-space:nowrap;text-align:left;margin-left:2%;}
+.d_tit h4{text-align:left;color:#595959;font-size:18px;}
+.d_tit p{text-align:left;color:#307d74;font-size:14px;padding-top:3px;}
+.d_tit .p_cot{width:100%;overflow:hidden;clear:both;padding-top:3px;}
+.d_tit .p1{display:inline-block;width:60%;height:24px;line-height:24px;float:left;}
+.d_tit .p2{display:inline-block;width:35%;line-height:24px;float:left;text-align:left;background:#FA5F5F;border:2px #F04B4B solid;line-height:24px;color:#fff;border-radius:3px;text-align:center;
+}
+.d_tit .pgif{height:24px;line-height:24px;width:100%;display:inline-block;padding-bottom:10px;}
+
+/*奖品 end*/

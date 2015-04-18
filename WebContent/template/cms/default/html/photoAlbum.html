@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>捷微团队</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- Mobile Devices Support @begin -->
+	<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+	<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+	<meta content="no-cache" http-equiv="pragma">
+	<meta content="0" http-equiv="expires">
+	<meta content="telephone=no, address=no" name="format-detection">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" /> <!-- apple devices fullscreen -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<!-- Mobile Devices Support @end -->
+	<meta name="keywords" content="eeeeeeeeeeeee11111111" />
+	<meta name="description" content="" />
+	<script type="text/javascript" src="${cmsData.base}/js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="${cmsData.base}/js/common.js"></script>
+		<link type="text/css" rel="stylesheet" href="${cmsData.base}/css/bootstrap.css">
+	<script type="text/javascript" src="${cmsData.base}/js/bootstrap.js"></script>
+		<link type="text/css" rel="stylesheet" href="${cmsData.base}/css/font-awesome.min.css" />
+	<link type="text/css" rel="stylesheet" href="${cmsData.base}/css/common.mobile.css">
+	<script type="text/javascript" src="${cmsData.base}/js/cascade.js"></script>
+	<script type="text/javascript" src="${cmsData.base}/js/jquery.touchwipe.js"></script>
+	<script type="text/javascript" src="${cmsData.base}/js/swipe.js"></script>
+</head>
+<style>
+/*重定义bootstrap样式*/
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{width:100%; margin-bottom:0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{height:30px;}
+.input-append, .input-prepend{width:100%; margin-bottom:0;}
+select{padding:0 5px; line-height:28px; -webkit-appearance:button;}
+.checkbox.inline{margin-top:0;}
+.checkbox.inline + .checkbox.inline {margin-left:0;}
+.checkbox input[type="checkbox"]{filter:alpha(opacity:0); opacity:0;}
+.file{position:relative;}
+.file input[type="file"]{position:absolute; top:0; left:0; width:100%; filter:alpha(opacity:0); opacity:0;}
+.file button{width:100%; text-align:left;}
+.form-item{border-left:3px #ED2F2F solid; padding-left:10px; height:30px; line-height:30px; background:#F7F7F7; margin-bottom:10px;}
+</style>
+<body>
+<link rel="stylesheet" type="text/css" href="${cmsData.base}/css/photo.mobile.css" media="all" />
+<link rel="stylesheet" type="text/css" href="${cmsData.base}/css/photoswipe.mobile.css" media="all" />
+<script type="text/javascript" src="${cmsData.base}/js/jquery.imagesloaded.js"></script>
+<script type="text/javascript" src="${cmsData.base}/js/jquery.wookmark.min.js"></script>
+<script type="text/javascript" src="${cmsData.base}/js/klass.min.js"></script>
+<script type="text/javascript" src="${cmsData.base}/js/code.photoswipe.min.js"></script>
+<script type="text/javascript" src="${cmsData.base}/js/jquery.lazyload.js"></script>
+<style>
+/*重定义bootstrap样式*/
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{width:100%; margin-bottom:0; box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box;}
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input{height:30px;}
+.input-append, .input-prepend{width:100%; margin-bottom:0;}
+select{padding:0 5px; line-height:28px; -webkit-appearance:button;}
+.checkbox.inline{margin-top:0;}
+.checkbox.inline + .checkbox.inline {margin-left:0;}
+.checkbox input[type="checkbox"]{filter:alpha(opacity:0); opacity:0;}
+.file{position:relative;}
+.file input[type="file"]{position:absolute; top:0; left:0; width:100%; filter:alpha(opacity:0); opacity:0;}
+.file button{width:100%; text-align:left;}
+.form-item{border-left:3px #ED2F2F solid; padding-left:10px; height:30px; line-height:30px; background:#F7F7F7; margin-bottom:10px;}
+</style></head>
+
+<body>
+<div class="main"><link rel="stylesheet" type="text/css" href="wxc_files/photo.css" media="all">
+<link rel="stylesheet" type="text/css" href="wxc_files/photoswipe.css" media="all">
+<script type="text/javascript" src="wxc_files/jquery.js"></script>
+<script type="text/javascript" src="wxc_files/jquery_003.js"></script>
+<style>
+img{width:100%!important;}
+/* 单排  class="album" */
+#gallery li{
+	display:block;
+	width:inherit;
+	margin:5px;
+}
+.album li p>span, .album1 li p>span, .album2 li p>span {
+	float: right;
+	color: #aaa;
+	position: absolute;
+	right: 5px;
+	background: #fff;
+	padding-left: 5px;
+}
+#gallery li p {
+	display: inline-block;
+	max-width: 100%;
+}
+</style>
+<div id="photo">
+	<div class="body">
+		<div class="qiandaobanner">
+			<a href="#">
+				<img src="${cmsData.base}/images/albums_head.jpg" alt="" style="max-height:200px;">
+			</a>
+		</div>
+		<div id="main" class="album"> <!--这个地方class有变化-->
+			<ul id="gallery" class="gallery">
+			<#list cmsData.photoAlbumList as data>
+					<#if data.photo??>
+				<li style="">
+					<a href="cmsController.do?goPage&page=photo&id=${data.id}" >
+						<img id="${data.id}" src="${data.photo.realpath}" alt="${data.photo.name}">
+						<p>${data.photo.name}<span></span></p>
+					</a>
+				</li>
+				</#if>
+				</#list>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+/* CSS Document */
+*{margin:0px;padding:0px;}
+ul,li{list-style:none;}
+img{border:0px;}
+a{text-decoration:none;}
+body{background:#333;}
+.w100{max-width:960px;margin:auto;}
+
+.e_main{background:#f3f2ed;}
+.e_top{ position: relative; min-height:76px; background-color: #313944; }
+.e_t_left{ position: absolute; left:0px; top:0px; padding-left: 18px; background-color: #f00;}
+.e_t_right{ padding-left:108px; background: url(../imgs/top_2.jpg) no-repeat 106px 5px; padding-top: 35px;
+    font-family: "microsoft yahei";color:#fff; line-height: 18px; font-size: 12px;}
+.e_cont{padding:10px 5%;}
+.e_left{ position: absolute; left:0; top:0px; width:96px; height: 96px;
+    overflow: hidden;}
+.e_left img{width:100%;}
+.e_right{ padding: 5px; padding-left: 100px; font-size: 12px; line-height: 20px;}
+.e_cont ul{overflow:hidden;clear:both;padding:0px;}
+.e_cont ul li{  position: relative; min-height: 98px; background:#32394a;margin-bottom:3px;color:#fff;}
+.cb{clear:both;}
+.e_right1{ padding: 5px; font-size: 12px; line-height: 20px;}
+
+.e_top1{ position: relative; min-height:76px; background-color:#59A8F7; }
+.e_top2{ position: relative; min-height:30px; background-color:#930;}
+
+.e_rload{background:#666; color:#FFF; font-weight:bold; font-size:14px; border:1px; height:30px;width:100%; margin-top:-1px;}
+.e_rtext{border-color:#603;;margin:auto;}
+.e_rsubmit{background:#030;color:#FFF; font-weight:bold;font-size:14px; border:0px; height:30px;width:100%; margin-top:-1px;}

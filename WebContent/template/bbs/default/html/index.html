@@ -1,0 +1,349 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title></title>
+		<meta charset="utf-8">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="eric.wu" name="author">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+		<meta content="no-cache" http-equiv="pragma">
+		<meta content="0" http-equiv="expires">
+		<meta content="telephone=no, address=no" name="format-detection">
+		<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+		<link rel="stylesheet" type="text/css" href="${bbsData.base}/css/main.css" ></link>
+		<link rel="stylesheet" type="text/css" href="${bbsData.base}/css/dialog.css" ></link>
+		<script src="${bbsData.base}/js/jquery_min.js" ></script>
+		<script src="${bbsData.base}/js/main.js" ></script>
+		<script src="${bbsData.base}/js/dialog_min.js" ></script>
+		<script>
+	       function collectTrends(type, sid, tid, uid){
+		        var args = arguments;
+		        loading(true);
+	    	    $.post('/snsmobile/collect',{
+	    	        "type" : type,
+	    	        "sid"  : sid,
+	    	        "tid"  : tid,
+	    	        "uid"  : uid,
+		    	    },function(res){
+		    	    	loading(false);
+		    	    	if("1" == res){
+    		    	    	var $a = $("#collect_"+tid);
+    		    	    	var label = $a.find("label")[0];
+    		    	    	var total = parseInt(label.innerText );
+    		    	    	$a[0==type?"addClass":"removeClass"]("on");
+    		    	    	total = (0 == type)?total+1:total-1;
+    		    	    	label.innerText = total;
+    		    	    	$a.attr("onclick", 'collectTrends('+[1,0][type]+","+(Array.prototype.slice.call(args, 1).join(','))+');');
+		    	    	}
+		    	    });
+	        }
+	       function praiseTrends(type, sid, tid, uid){
+	    	    var args = arguments;
+	    	    loading(true);
+	    	    $.post('/snsmobile/praise',{
+	    	        "type" : type,
+	    	        "sid"  : sid,
+	    	        "tid"  : tid,
+	    	        "uid"  : uid,
+		    	    },function(res){
+		    	    	loading(false);
+		    	    	if("1" == res){
+    		    	    	var $a = $("#praise_"+tid);
+    		    	    	var label = $a.find("label")[0];
+    		    	    	var total = parseInt(label.innerText );
+    		    	    	$a[0==type?"addClass":"removeClass"]("on");
+    		    	    	total = (0 == type)?total+1:total-1;
+    		    	    	label.innerText = total;
+    		    	    	$a.attr("onclick", 'praiseTrends('+[1,0][type]+","+(Array.prototype.slice.call(args, 1).join(','))+');');
+		    	    	}
+		    	    });
+	        }
+		</script>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;" class="discuss_index">
+		<div id="container" class="container">
+			<header>
+				<div class="header_1">
+					<ul class="tbox" >
+						<li>
+							<span >
+								<img src="${bbsData.base}/images/top.png" width="200" onerror="this.src='http://stc.weimob.com/img/sns/2.png';" />
+							</span>
+						</li>
+						<li>
+							<h5>微社区</h5>
+							<p>
+								<a href="javascript:;" class="label"><span class="icons icons_post">&nbsp;</span>${bbsData.postCount}帖子</a>
+								<!-- LQ 访问量
+								<a href="javascript:;" class="label"><span class="icons icons_visisted">&nbsp;</span>81762访问</a>
+								 -->
+							</p>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<div class="body">
+				<div id="list_article" class="list_article">
+					<#list bbsData.postList as data>
+					<article>
+						<header>
+    						<ul class="tbox">
+								<li>
+    								<h5>${data.postPerson}</h5>
+									<p>${data.createDate}</p>
+    							</li>
+    						</ul>
+    					</header>
+    					<section>
+    						<figure data-count="${data.postImg?size}张图片">
+    							<div>
+    								<#list data.postImg as postImg>
+                						<img src="${postImg.realpath}" data-src="${postImg.realpath}" data-gid="g7" onload="preViewImg(this, event);"/>	    
+            						</#list>	        
+    							</div>
+    						</figure>
+    						</br>
+							<div>
+    							<h5>${data.title}</h5>
+								<div>${data.content?substring(0,3)}</div>
+							</div>
+							<a href="bbsController.do?goPage&page=post&id=${data.id}">查看全文</a>
+						</section>
+						<footer>
+    						<ul class="box">
+    						<!-- LQ
+    							<li>
+    								<a href="javascript:;" class="a_collect" id="collect_7" onclick="collectTrends(0, 1071, 7, 234186);" ><span class="icons icons_collect" >&nbsp;</span><label>432</label></a>
+    							</li>
+    						 -->
+    							<li>
+    								<a href="bbsController.do?goPage&page=post&id=${data.id}" class="a_comment"><span class="icons icons_comment" >评论</span><label>${data.postComment?size}</label></a>
+    							</li>
+    						<!-- LQ
+    							<li>
+    								<a href="javascript:;" class="a_like" id="praise_7" onclick="praiseTrends(0, 1071, 7, 234186);"><span class="icons icons_like"   >&nbsp;</span><label>505</label></a>
+    							</li>
+    						-->
+							</ul>
+						</footer>
+    				</article>
+    				</#list>
+				</div>
+			</div>
+			<footer>
+				<section class="nav_footer">
+					<ul class="box">
+						<!-- LQ 
+						<li>
+							<a href="http://1071.m.weimob.com/snsmobile?v=d25a073b59a943cae5898cf23b963716&pid=1071&wechat_id=osXr8jjLHBFQlYcITF-AEWT5l1RQ" class="on">
+								<span class="icons_home">&nbsp;</span>
+								<label>首页</label>
+							</a>
+						</li>
+						-->
+						<li>
+							<a href="bbsController.do?goPage&page=addpost" class="nav_add">
+								<span class="icons_home_edit">贴</span>
+							</a>
+						</li>
+						<!-- LQ 
+						<li>
+							<a href="/snsmobile/messagelist?sid=1071&uid=234186">
+								<span class="icons_my">&nbsp;</span>
+								<label>我的</label>
+							</a>
+						</li>
+						-->
+					</ul>
+				</section>
+			</footer>
+		</div>
+	</body>
+		<script>
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+			
+			window.shareData = {
+				"imgUrl": "http://img.weimob.com/static/1c/38/3c/image/20140313/20140313212717_71577.jpg",
+				"timeLineLink": "http://1071.m.weimob.com/snsmobile/?_tj_twtype=22&_tj_pid=1071&_tt=1&_tj_graphicid=8&_tj_title=%E5%BE%AE%E7%9B%9F%E5%BE%AE%E7%A4%BE%E5%8C%BA&_tj_keywords=%E7%A4%BE%E5%8C%BA&id=8&v=d25a073b59a943cae5898cf23b963716&pid=1071&wechat_id=fromUsername",
+				"sendFriendLink": "http://1071.m.weimob.com/snsmobile/?_tj_twtype=22&_tj_pid=1071&_tt=1&_tj_graphicid=8&_tj_title=%E5%BE%AE%E7%9B%9F%E5%BE%AE%E7%A4%BE%E5%8C%BA&_tj_keywords=%E7%A4%BE%E5%8C%BA&id=8&v=d25a073b59a943cae5898cf23b963716&pid=1071&wechat_id=fromUsername",
+				"weiboLink": "http://1071.m.weimob.com/snsmobile/?_tj_twtype=22&_tj_pid=1071&_tt=1&_tj_graphicid=8&_tj_title=%E5%BE%AE%E7%9B%9F%E5%BE%AE%E7%A4%BE%E5%8C%BA&_tj_keywords=%E7%A4%BE%E5%8C%BA&id=8&v=d25a073b59a943cae5898cf23b963716&pid=1071&wechat_id=fromUsername",
+				"tTitle": "微社区",
+				"tContent": "建立微信社交平台，让交流无限。",
+				"fTitle": "微社区",
+				"fContent": "建立微信社交平台，让交流无限。",
+				"wContent": "建立微信社交平台，让交流无限。"
+			};
+
+			// 发送给好友
+			WeixinJSBridge.on('menu:share:appmessage', function (argv) {
+				WeixinJSBridge.invoke('sendAppMessage', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.sendFriendLink,
+					"desc": window.shareData.fContent,
+					"title": window.shareData.fTitle
+				}, function (res) {
+					_report('send_msg', '111111');
+				})
+			});
+
+			// 分享到朋友圈
+			WeixinJSBridge.on('menu:share:timeline', function (argv) {
+				WeixinJSBridge.invoke('shareTimeline', {
+					"img_url": window.shareData.imgUrl,
+					"img_width": "640",
+					"img_height": "640",
+					"link": window.shareData.timeLineLink,
+					"desc": window.shareData.tContent,
+					"title": window.shareData.tTitle
+				}, function (res) {
+					_report('timeline', res.err_msg);
+				});
+			});
+
+			// 分享到微博
+			WeixinJSBridge.on('menu:share:weibo', function (argv) {
+				WeixinJSBridge.invoke('shareWeibo', {
+					"content": window.shareData.wContent,
+					"url": window.shareData.weiboLink
+				}, function (res) {
+					_report('weibo', res.err_msg);
+				});
+			});
+		}, false)
+	</script>
+<script type="text/javascript">  
+    $(document).ready(function(){
+        
+        var range = 50;             //距下边界长度/单位px  
+       var pageNum = 2;  
+        var totalheight = 0;   
+        var main = $("#list_article");                //主体元素
+       var state = 0;  
+        var _srollPos = 0;
+
+        var TPL = '<article {guan}>'+
+                		' <header>'+
+                		' <ul class="tbox">'+
+                		' <li>'+
+                		' 	<a href="{his_tiezi_href}" class="head_img">'+
+                		' 		<img src="{head_img}" onerror="this.src=\'http://stc.weimob.com/img/sns/2.png\';" />'+
+                		' 	</a>'+
+                		' 	</li>'+
+                		' <li>'+
+                		' 	<h5>{nickname}</h5>'+
+                		' 	<p>{ctime}</p>'+
+                		' </li>'+
+                		' <li>{edit_trend}</li>'+
+                		' </ul>'+
+                		' </header>'+
+                		' <section>'+
+                		' <figure data-count="{image_url_count}张图片" {show_pic}>'+
+                		' <div>{imgs}</div>'+
+                		' 	</figure>'+
+                		' 		<div>'+
+                		' 		<h5>{title}</h5>'+
+                		' 		<div>{content}</div>'+
+                		' 		<a href="{comment_href}">查看全文</a>'+
+                		' 	</section>'+
+                		' 	<footer>'+
+                		' 		<ul class="box">'+
+                		' 			<li>'+
+                		' 				<a href="javascript:;"  id="collect_{tid}" class="a_collect {collect_on}" {collect_click} ><span class="icons icons_collect" >&nbsp;</span><label>{collect}</label></a>'+
+                		' 			</li>'+
+                		' 			<li>'+
+                		' 						<a href="{comment_href}" class="a_comment"><span class="icons icons_comment" >&nbsp;</span><label>{comment}</label></a>'+
+                	    ' 						</li>'+
+                	    ' 						<li>'+
+                	    ' 	<a href="javascript:;" id="praise_{tid}" class="a_like {praise_on}" {praise_click}><span class="icons icons_like"   >&nbsp;</span><label>{praise}</label></a>'+
+                	    ' </li>'+
+                	    ' 					</ul>'+
+                	    ' 		</footer>'+
+                	    ' </article>';
+
+       var TPL_imgs = '<img src="{img_url}" data-src="{img_url}" data-gid="g{gi}" onload="preViewImg(this, event);"/>';
+        
+        $(window).scroll(function(){
+            var pageSize = 15;
+            var total = 1313;
+            if( Math.ceil(total/pageSize)<pageNum ){
+                  return false;
+            }
+            var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)  
+           if(srollPos<_srollPos){
+                return;
+            }else{
+            	_srollPos = srollPos;
+            }
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);  
+            if(!state && (($(document).height()-range) <= totalheight) ) {
+          	    loading(true);
+            	state = 1;
+                $.post('/snsmobile/ajaxindex',{
+                    "sid"  : 1071,
+                    "ruid" : 234186,
+                    "page" : pageNum
+                    },function(res){
+                        loading(false);
+                        if(res) {
+                            var data = $.parseJSON(res);
+                            //console.log(data);
+                        html = iTemplate.makeList(TPL, data.rows, function(k,v){
+                            console.log(v);
+                            var gi = new Date().getTime();
+                            var subObj = {
+                                his_tiezi_href:'/snsmobile/othertrendslist?sid='+v.sid+'&uid='+v.uid+'&ruid='+v.ruid,
+                                edit_trend:v.uid==v.ruid?'<a href="/snsmobile/trendsrow?pid='+v.sid+'&tid='+v.tid+'&exa_trends='+data.shopinfo.exa_trends+'" class="icons icons_edit">&nbsp;</a>':'',
+                                head_img:"2"== v.type?( v.head_img||'http://stc.weimob.com/img/sns/2.png'):(data.shopinfo.image),
+                                nickname:"2"== v.type?(v.nickname||'游客'):(data.shopinfo.nickname),
+                                guan: "1"==v.type?'data-role="guan"':'',
+                                image_url_count: v.image_url[0]? v.image_url.length:0,
+                        		show_pic:v.image_url[0]?'':'style="display:none;"',
+                                imgs: iTemplate.makeList(TPL_imgs, v.image_url, function(kk,vv){
+                                    return {
+                                         gi: gi 
+                                       }
+                                }),
+                                praise_on:"1" == (parseInt(v.ispraise) && ("0" != 234186) )?'on':'',
+                                collect_on:"1" == (parseInt(v.iscollect) && ("0" != 234186) )?'on':'',
+                                praise_click: "0" == 234186?'onclick="return false;"': 'onclick="praiseTrends('+v.ispraise+', '+v.sid+', '+v.tid+', '+v.ruid+')"',
+                                collect_click: "0" == 234186?'onclick="return false;"': 'onclick="collectTrends('+v.iscollect+', '+v.sid+', '+v.tid+', '+v.ruid+')"',
+                                comment_href: "0" == 234186?'javascript:;':  '/snsmobile/commentlist?sid='+v.sid+'&tid='+v.tid+'&ruid='+v.ruid,
+                                ctime:(function(vctime){
+                            	    var f_ctime = new Date(vctime);
+                            	    var arr = [];
+                            	    arr.push( f_ctime.getFullYear() );
+                            	    arr.push( "-" + (f_ctime.getMonth()+1 ) );
+                            	    arr.push( "-" + f_ctime.getDate() );
+                            	    arr.push( " " + f_ctime.getHours() );
+                            	    arr.push( ":" + f_ctime.getMinutes() );
+                            	    arr.push( ":" + f_ctime.getSeconds() );
+                            	    return arr.join("");
+                                })(v.ctime*1000),
+                               
+                            };
+                            return subObj;
+                        });
+                        main.append($(html) );
+                        pageNum ++;
+                        state = 0;
+                    }else{
+                    	loading(false);
+                    	state = 0;
+                    	alert("没有更多了...","1500");
+                    }
+                });
+            }  
+        });  
+    }); 
+
+
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.call('showOptionMenu');
+    });
+</script> 
+</html>
