@@ -9,13 +9,6 @@
     <param-value>jeecg</param-value>
   </context-param>
   <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
-  </context-param>
-  <listener>
-    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
-  </listener>
-  <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath:spring-*.xml</param-value>
   </context-param>
@@ -84,6 +77,15 @@
   <listener>
     <listener-class>org.jeecgframework.web.system.listener.OnlineListener</listener-class>
   </listener>
+  <servlet> 
+         <servlet-name>log4j-init</servlet-name> 
+         <servlet-class>Log4jInit</servlet-class> 
+         <init-param> 
+           <param-name>log4j</param-name> 
+           <param-value>WEB-INF/classes/log4j.properties</param-value> 
+         </init-param> 
+         <load-on-startup>0</load-on-startup> 
+       </servlet> 
   <servlet>
     <description>spring mvc servlet</description>
     <servlet-name>springMvc</servlet-name>
