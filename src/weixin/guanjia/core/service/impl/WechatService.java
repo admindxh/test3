@@ -122,7 +122,9 @@ public class WechatService {
 					+ "   |   content:" + content);
 
 			LogUtil.info("-toUserName--------" + toUserName);
+			LogUtil.info("-findByToUsername--------" + this.weixinAccountService.findByToUsername(toUserName));
 			String sys_accountId = this.weixinAccountService.findByToUsername(toUserName).getId();
+		
 			LogUtil.info("-sys_accountId--------" + sys_accountId);
 			ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
 
