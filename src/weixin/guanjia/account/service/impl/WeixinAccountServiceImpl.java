@@ -261,7 +261,7 @@ public class WeixinAccountServiceImpl extends CommonServiceImpl implements
 
 	public WeixinAccountEntity findByToUsername(String toUserName) {
 		return (WeixinAccountEntity) findUniqueByProperty(
-				WeixinAccountEntity.class, "weixin_accountid", toUserName);
+				WeixinAccountEntity.class, "weixinaccountid", toUserName);
 	}
 
 	public String replaceVal(String sql, WeixinAccountEntity t) {
