@@ -6,18 +6,22 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.DataGrid;
+import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import weixin.cms.cmsdata.CmsDataCollectI;
 import weixin.cms.cmsdata.impl.CmsArticleDataCollect;
 import weixin.cms.cmsdata.impl.CmsIndexDataCollect;
@@ -85,6 +89,7 @@ public class CmsController extends BaseController
       templateName = "default";
       styleUrl = rootUrl + "/default/html/";
     }
+    LogUtil.info("-----------template------"+templateName);
     params.put("styleName", templateName);
 
     CmsFreemarkerHelper cmsFreemarkerHelper = new CmsFreemarkerHelper(styleUrl);
@@ -93,7 +98,7 @@ public class CmsController extends BaseController
       CmsDataCollectI cmsDataCollect = (CmsDataCollectI)dataCollectContent.get(page);
       cmsDataCollect.collect(params);
     }
-
+    LogUtil.info("-----------page------"+page);
     String html = cmsFreemarkerHelper.parseTemplate(page + ".html", CmsDataContent.loadContent());
     response.setContentType("text/html");
     response.setHeader("Cache-Control", "no-store");
