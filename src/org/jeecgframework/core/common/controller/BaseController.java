@@ -23,8 +23,6 @@ import org.springframework.web.context.ServletConfigAware;
  * @author  张代浩
  * 
  */
-@Controller
-@RequestMapping("/baseController")
 public class BaseController  implements ServletConfigAware{
 	
 	
@@ -99,11 +97,14 @@ public class BaseController  implements ServletConfigAware{
 		myServConfig =  arg0;
 	}
 	public String getMyRootUrl(String url)
-	  {
-	  String   rootUrl = myServConfig.getServletContext().getRealPath("")+url;
+	  {  
+	  LogUtil.info(myServConfig+"---------myServconfig");
+	  LogUtil.info(myServConfig+"---------myServconfig");
+	  LogUtil.info(myServConfig.getServletContext().getRealPath("/")+"---------myServConfig.getServletContext().getRealPath");
+	  String   rootUrl =                myServConfig.getServletContext().getRealPath("/")+url;
 	    //为了兼容多个应用项目 获取方式
 	    return rootUrl;
-	  }
+	  }     
 
 	public ServletConfig getMyServConfig() {
 		return myServConfig;

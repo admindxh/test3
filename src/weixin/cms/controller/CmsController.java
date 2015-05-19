@@ -6,6 +6,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -19,6 +20,7 @@ import javax.servlet.http.HttpSession;
 
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.DataGrid;
+import org.jeecgframework.core.util.FileUtils;
 import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
@@ -63,10 +65,12 @@ public class CmsController extends BaseController
   private String getRootUrl(HttpServletRequest request, String page)
   {
     String rootUrl = null;
-    
-    System.out.println(request.getSession().getServletContext().getRealPath(""));
-    LogUtil.info("----------rooturl---"+getMyRootUrl(""));
-    rootUrl = super.getMyRootUrl("")+"/template/cms";
+    ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+    //System.out.println(request.getSession().getServletContext().getRealPath(""));
+   // LogUtil.info("----------rooturl---"+super.getMyRootUrl(""));
+   // rootUrl = super.getMyRootUrl("")+"/template/cms";
+    rootUrl =  request.getSession().getServletContext().getRealPath("/template/cms");
+    LogUtil.info(rootUrl+"----------------------rootUrl");
     //为了兼容多个应用项目 获取方式 
     return rootUrl;
   }

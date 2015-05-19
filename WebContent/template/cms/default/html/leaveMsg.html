@@ -87,6 +87,7 @@ $(document).on("click","#showcard1",function(){
                 $(html).prependTo("#limsg");
                 $("#limsg").html(html);
                 $("#nickName").val("") ;
+                $("#concact").val("") ;
                 $("#content").val("");
                 $("#closel").trigger("click");
                 return;
@@ -120,7 +121,7 @@ $(document).on("click",".sure",function(){
 
     $.ajax({
         type:"get",
-        url:"cmsFrontController.do?leaveMsg&nickName="+nickName+"&content="+content,
+        url:"cmsFrontController.do?leaveMsg&nickName="+nickName+"&content="+content+"&concact="+concact,
         url:"index.php?g=Wap&m=Reply&a=reply&wecha_id="+wecha_id+"&check="+check+"&message_id="+message_id+"&token=gh_76bdf4a660bc&reply="+reply,
         success:function(result){
             //alert(result);exit;
@@ -240,6 +241,7 @@ $(document).ready(function(){
         <input type="text" value="oxFTajphs03nAUADs63ATCqsPxMw" name="wecha_id" id="wecha_id" style="display:none;">
         <input type="text" value="gh_76bdf4a660bc" name="token" id="token" style="display:none;">
 		<dt><input name="nickName"  type="text" class="px" id="nickName" value=""  placeholder="请输入您的昵称"></dt>
+		<dt><input name="concact"  type="text" class="px" id="concact" value=""  placeholder="请输入联系方式:QQ号/手机号/邮箱"></dt>
 	    <dt><textarea name="content" class="pxtextarea" style=" height:60px;"  id="content"  placeholder="请输入留言" ></textarea></dt>
 		<dt><a id="showcard1"  class="submit" >提交留言</a></dt>
       </dl>
