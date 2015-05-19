@@ -3,8 +3,7 @@ package org.jeecgframework.core.common.controller;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletConfig;
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.criterion.DetachedCriteria;
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.ServletConfigAware;
 
 
 /**
@@ -24,7 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/baseController")
-public class BaseController  extends HttpServlet{
+public class BaseController  implements ServletConfigAware{
+	
+	
+	public ServletConfig  mySerlConfig ;
 	
 	public static final  String ACCOUNTID="accountid";
 
@@ -88,10 +91,11 @@ public class BaseController  extends HttpServlet{
 		request.setAttribute("totalPage", totalPage);
 		return list;
 	}
-	
-	public  ServletContext  getMyHttpServlet(){
-		
-		return this.getServletContext();
+
+	@Override
+	public void setServletConfig(ServletConfig arg0) {
+		// TODO Auto-generated method stub
+		mySerlConfig =  arg0;
 	}
 	
 }

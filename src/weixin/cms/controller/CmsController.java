@@ -7,7 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,7 +22,10 @@ import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -39,7 +47,7 @@ import weixin.cms.util.CmsFreemarkerHelper;
 
 @Controller
 @RequestMapping({"/cmsController"})
-public class CmsController extends BaseController
+public class CmsController extends BaseController 
 {
 
   @Autowired
@@ -57,10 +65,9 @@ public class CmsController extends BaseController
     String rootUrl = null;
     
     System.out.println(request.getSession().getServletContext().getRealPath(""));
-    LogUtil.info("----------rooturl---"+super.getServletContext());
-    rootUrl = super.getServletContext().getRealPath("")+"/template/cms";
+    LogUtil.info("----------rooturl---"+mySerlConfig.getServletContext());
+    rootUrl = mySerlConfig.getServletContext().getRealPath("")+"/template/cms";
     //为了兼容多个应用项目 获取方式
-    
     return rootUrl;
   }
 
@@ -158,4 +165,7 @@ public class CmsController extends BaseController
 
     dataCollectContent.put("leaveMsg", new CmsLeaveMsgDataCollect());
   }
+
+  
+  
 }
