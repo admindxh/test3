@@ -3,6 +3,8 @@ package org.jeecgframework.core.common.controller;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.hibernate.criterion.DetachedCriteria;
@@ -22,7 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/baseController")
-public class BaseController {
+public class BaseController  extends HttpServlet{
 	
 	public static final  String ACCOUNTID="accountid";
 
@@ -85,6 +87,11 @@ public class BaseController {
 		request.setAttribute("totalRow", totalRow);
 		request.setAttribute("totalPage", totalPage);
 		return list;
+	}
+	
+	public  ServletContext  getMyHttpServlet(){
+		
+		return this.getServletContext();
 	}
 	
 }

@@ -55,9 +55,12 @@ public class CmsController extends BaseController
   private String getRootUrl(HttpServletRequest request, String page)
   {
     String rootUrl = null;
-    System.out.println(request.getSession().getServletContext().getRealPath("/"));
-    LogUtil.info(request.getSession().getServletContext().getRealPath("/")+"rooturl---------"+ request.getSession().getServletContext().getRealPath("/template/cms"));
-    rootUrl = request.getSession().getServletContext().getRealPath("/")+"/template/cms";
+    
+    System.out.println(request.getSession().getServletContext().getRealPath(""));
+    LogUtil.info("----------rooturl---"+super.getServletContext());
+    rootUrl = super.getServletContext().getRealPath("")+"/template/cms";
+    //为了兼容多个应用项目 获取方式
+    
     return rootUrl;
   }
 
