@@ -38,6 +38,13 @@ $(document).on("click","#showcard1",function(){
 		alert("请输入昵称");
 		return
 	}
+	
+	var concact = $("#concact").val();
+	if (concact  == '') {
+		alert("请输入联系方式:QQ号/手机号/邮箱");
+		return
+	}
+	
 	var content = $("#content").val();
 	if (content == '') {
 		alert("请输入内容");
@@ -45,6 +52,7 @@ $(document).on("click","#showcard1",function(){
 	}
 	var formData = new Object();
 	formData['nickName'] = nickName;
+	formData['concact'] = concact;
 	formData['content'] = content;
     $.ajax({
         type:"post",
@@ -57,6 +65,7 @@ $(document).on("click","#showcard1",function(){
             if(res['success'] == false){
                 $("#nickName").val("") ;
                 $("#content").val("");
+                $("#concact").val("");
                 $("#closel").trigger("click");
                 return;
             }else if(res['success'] == true){

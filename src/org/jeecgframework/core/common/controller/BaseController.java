@@ -10,6 +10,7 @@ import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
 import org.jeecgframework.core.common.service.CommonService;
 import org.jeecgframework.core.interceptors.DateConvertEditor;
+import org.jeecgframework.core.util.LogUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -27,7 +28,7 @@ import org.springframework.web.context.ServletConfigAware;
 public class BaseController  implements ServletConfigAware{
 	
 	
-	public ServletConfig  mySerlConfig ;
+	private  ServletConfig  myServConfig ;
 	
 	public static final  String ACCOUNTID="accountid";
 
@@ -95,7 +96,21 @@ public class BaseController  implements ServletConfigAware{
 	@Override
 	public void setServletConfig(ServletConfig arg0) {
 		// TODO Auto-generated method stub
-		mySerlConfig =  arg0;
+		myServConfig =  arg0;
+	}
+	public String getMyRootUrl(String url)
+	  {
+	  String   rootUrl = myServConfig.getServletContext().getRealPath("")+url;
+	    //为了兼容多个应用项目 获取方式
+	    return rootUrl;
+	  }
+
+	public ServletConfig getMyServConfig() {
+		return myServConfig;
+	}
+
+	public void setMyServConfig(ServletConfig myServConfig) {
+		this.myServConfig = myServConfig;
 	}
 	
 }
