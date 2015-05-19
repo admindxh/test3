@@ -55,8 +55,9 @@ public class CmsController extends BaseController
   private String getRootUrl(HttpServletRequest request, String page)
   {
     String rootUrl = null;
-
-    rootUrl = request.getSession().getServletContext().getRealPath("/template/cms");
+    System.out.println(request.getSession().getServletContext().getRealPath("/"));
+    LogUtil.info(request.getSession().getServletContext().getRealPath("/")+"rooturl---------"+ request.getSession().getServletContext().getRealPath("/template/cms"));
+    rootUrl = request.getSession().getServletContext().getRealPath("/")+"/template/cms";
     return rootUrl;
   }
 
@@ -73,7 +74,7 @@ public class CmsController extends BaseController
     WeixinCmsStyleEntity weixinCmsStyleEntity = null;
 
     String templateName = null;
-
+    LogUtil.info(weixinCmsStyleEntity);
     if (weixinCmsSiteEntity != null) {
       if (weixinCmsSiteEntity.getSiteTemplateStyle() != null) {
         weixinCmsStyleEntity = (WeixinCmsStyleEntity)this.weixinCmsStyleService.get(WeixinCmsStyleEntity.class, weixinCmsSiteEntity.getSiteTemplateStyle());
@@ -89,11 +90,11 @@ public class CmsController extends BaseController
       templateName = "default";
       styleUrl = rootUrl + "/default/html/";
     }
-    LogUtil.info("-----------template------"+templateName);
+    LogUtil.info("-----------template------"+templateName+"------styleUrl-----"+styleUrl+"--------"+page);
     params.put("styleName", templateName);
 
     CmsFreemarkerHelper cmsFreemarkerHelper = new CmsFreemarkerHelper(styleUrl);
-
+    LogUtil.info("-----------cmsFreemarkerHelper------"+cmsFreemarkerHelper);
     if (dataCollectContent.get(page) != null) {
       CmsDataCollectI cmsDataCollect = (CmsDataCollectI)dataCollectContent.get(page);
       cmsDataCollect.collect(params);
