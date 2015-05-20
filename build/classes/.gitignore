@@ -4,6 +4,15 @@
 /dbconfig.properties
 /ehcache.xml
 /jeecg/
+/log4j.properties
 /org/
-/weixin/
+/spring-minidao.xml
+/spring-mvc-aop.xml
+/spring-mvc-cgform.xml
+/spring-mvc-context.xml
+/spring-mvc-hibernate.xml
+/spring-mvc-timeTask.xml
+/spring-mvc.xml
+/sysConfig.properties
 /test/
+/weixin/
