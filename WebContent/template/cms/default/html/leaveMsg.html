@@ -67,8 +67,10 @@ $(document).on("click","#showcard1",function(){
                 $("#content").val("");
                 $("#concact").val("");
                 $("#closel").trigger("click");
+                alert("留言失败");
                 return;
             }else if(res['success'] == true){
+            	alert("留言成功");
                 var html = "";
                 html+="<li class='green bounceInDown'>";
            

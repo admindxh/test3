@@ -6,6 +6,7 @@
   <t:datagrid name="weixinLeaveMsgList" title="留言信息" actionUrl="weixinLeaveMsgController.do?datagrid" idField="id" fit="true">
    <t:dgCol title="编号" field="id" hidden="false"></t:dgCol>
    <t:dgCol title="昵称" field="nickName" ></t:dgCol>
+   <t:dgCol title="联系信息" field="concact" ></t:dgCol>
    <t:dgCol title="内容" field="content" ></t:dgCol>
    <t:dgCol title="留言时间" field="createDate" formatter="yyyy-MM-dd hh:mm:ss"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
