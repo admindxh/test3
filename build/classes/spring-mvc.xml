@@ -119,6 +119,7 @@
 					    <value>cmsArticleController.do?cmsArticleListShow</value>
 					    <value>cmsArticleController.do?datagridwx</value>
 					    <value>cmsArticleController.do?cmsArticleShow</value>
+					    <value>cmsController.do?goGsjs</value>
 					    <value>cmsController.do?goPage</value>
 					    <value>cmsController.do?getMenuList</value>
 					    <value>wechatController.do?wechat</value>

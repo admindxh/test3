@@ -126,45 +126,20 @@ public class CmsController extends BaseController
       e.printStackTrace();
     }
   }
-  @RequestMapping(params={"gsjs"})
+  @RequestMapping(params={"goGsjs"})
   public void gsjs(HttpServletRequest request, HttpServletResponse response, @RequestParam String page)
   {
-    Map params = paramsToMap(request);
+   
 
     String rootUrl = getRootUrl(request, page);
     String styleUrl = null;
 
-    WeixinCmsSiteEntity weixinCmsSiteEntity = (WeixinCmsSiteEntity)this.weixinCmsSiteService.findUniqueByProperty(WeixinCmsSiteEntity.class, "accountid", params.get("accountid"));
-
-    WeixinCmsStyleEntity weixinCmsStyleEntity = null;
-
     String templateName = null;
-    LogUtil.info(weixinCmsStyleEntity);
-    if (weixinCmsSiteEntity != null) {
-      if (weixinCmsSiteEntity.getSiteTemplateStyle() != null) {
-        weixinCmsStyleEntity = (WeixinCmsStyleEntity)this.weixinCmsStyleService.get(WeixinCmsStyleEntity.class, weixinCmsSiteEntity.getSiteTemplateStyle());
-      }
-      if (weixinCmsStyleEntity != null) {
-        templateName = ResourceUtil.getShangJiaAccountId() + "/" + weixinCmsStyleEntity.getTemplateUrl();
-        styleUrl = rootUrl + "/" + ResourceUtil.getShangJiaAccountId() + "/" + weixinCmsStyleEntity.getTemplateUrl() + "/html/";
-      } else {
-        templateName = "default";
-        styleUrl = rootUrl + "/default/html/";
-      }
-    } else {
+    
       templateName = "default";
       styleUrl = rootUrl + "/default/html/";
-    }
-    LogUtil.info("-----------template------"+templateName+"------styleUrl-----"+styleUrl+"--------"+page);
-    params.put("styleName", templateName);
 
     CmsFreemarkerHelper cmsFreemarkerHelper = new CmsFreemarkerHelper(styleUrl);
-    LogUtil.info("-----------cmsFreemarkerHelper------"+cmsFreemarkerHelper);
-    if (dataCollectContent.get(page) != null) {
-      CmsDataCollectI cmsDataCollect = (CmsDataCollectI)dataCollectContent.get(page);
-      cmsDataCollect.collect(params);
-    }
-    LogUtil.info("-----------page------"+page);
     String html = cmsFreemarkerHelper.parseTemplate(page + ".html", CmsDataContent.loadContent());
     response.setContentType("text/html");
     response.setHeader("Cache-Control", "no-store");
