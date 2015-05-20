@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2015-05-18 15:19:45
+Date: 2015-05-20 17:56:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2454,6 +2454,12 @@ INSERT INTO t_s_log VALUES ('402881fc485d955501485d964c5c0000', 'Chrome', '用�
 INSERT INTO t_s_log VALUES ('402886bd4d659861014d65b6cea80000', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-18 14:29:48', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('402886bd4d659861014d65b794980029', 'Chrome', '用户admin已退出', '2', '192.168.6.61', '2015-05-18 14:30:39', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('402886bd4d659861014d65b7b6c1002a', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-18 14:30:48', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d659861014d6618a9f9002b', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-18 16:16:41', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d659861014d664c24be002c', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-18 17:12:55', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d69a903014d69aed2430000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-19 08:59:34', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d6fce1a014d6fd221610000', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-20 13:35:51', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d6fe2e8014d6fe389380000', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-20 13:54:52', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd4d6ff2f2014d6ff65c8f0000', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-05-20 14:15:26', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a1d8301471a1e409b0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 15:54:56', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a20e301471a21ef3d0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 15:58:57', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a240e01471a25aefb0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 16:03:03', '1', '4028d881436d514601436d5215ac0043');
@@ -5166,16 +5172,17 @@ CREATE TABLE `weixin_leave_msg` (
   `UPDATE_DATE` datetime default NULL COMMENT '修改时间',
   `UPDATE_BY` varchar(32) default NULL COMMENT '修改人',
   `accountid` varchar(100) default NULL,
+  `concact` varchar(100) default NULL,
   PRIMARY KEY  (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of weixin_leave_msg
 -- ----------------------------
-INSERT INTO weixin_leave_msg VALUES ('402889fb480bef0c01480bf1d3930002', '123123', '123123', '2014-08-25 14:54:30', '4028d881436d514601436d5215ac0043', null, null, '402881e8461795c201461795c2e90000');
-INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f801487889f9de0158', 'vv宝贝', '该喝喝几节课', '2014-09-15 16:59:41', 'f7a8a3a9487816f80148788795320150', null, null, '402881e8461795c201461795c2e90000');
-INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f8014878974a60016e', '你好', '你好', '2014-09-15 17:14:13', null, null, null, null);
-INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f801487897e5d50170', '111111', '111', '2014-09-15 17:14:53', null, null, null, null);
+INSERT INTO weixin_leave_msg VALUES ('402889fb480bef0c01480bf1d3930002', '123123', '123123', '2014-08-25 14:54:30', '4028d881436d514601436d5215ac0043', null, null, '402881e8461795c201461795c2e90000', '123');
+INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f801487889f9de0158', 'vv宝贝', '该喝喝几节课', '2014-09-15 16:59:41', 'f7a8a3a9487816f80148788795320150', null, null, '402881e8461795c201461795c2e90000', '123');
+INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f8014878974a60016e', '你好', '你好', '2014-09-15 17:14:13', null, null, null, null, '234');
+INSERT INTO weixin_leave_msg VALUES ('f7a8a3a9487816f801487897e5d50170', '111111', '111', '2014-09-15 17:14:53', null, null, null, null, '234');
 
 -- ----------------------------
 -- Table structure for `weixin_leave_msg_reply`
