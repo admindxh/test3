@@ -69,7 +69,7 @@ public class CmsController extends BaseController
     //System.out.println(request.getSession().getServletContext().getRealPath(""));
    // LogUtil.info("----------rooturl---"+super.getMyRootUrl(""));
    // rootUrl = super.getMyRootUrl("")+"/template/cms";
-    rootUrl =  request.getSession().getServletContext().getRealPath("/template/cms");
+    rootUrl =  bundler.getString("tmBaseDir")+"/template/cms";
     LogUtil.info(rootUrl+"----------------------rootUrl");
     //为了兼容多个应用项目 获取方式 
     return rootUrl;
