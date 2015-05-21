@@ -412,7 +412,8 @@ public class WechatService {
 						url = news.getContent();
 					}
 					article.setUrl(url);
-					article.setDescription(news.getDescription());
+					//图文消息不显示描述，不支持富文本
+					//article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
@@ -459,7 +460,8 @@ public class WechatService {
 						url = news.getContent();
 					}
 					article.setUrl(url);
-					article.setDescription(news.getDescription());
+					//图文消息不显示描述，不支持富文本
+					//article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
@@ -533,7 +535,8 @@ public class WechatService {
 						url = news.getContent();
 					}
 					article.setUrl(url);
-					article.setDescription(news.getContent());
+					////图文消息不显示描述，不支持富文本
+					//article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
