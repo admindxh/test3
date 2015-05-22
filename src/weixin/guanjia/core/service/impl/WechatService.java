@@ -336,7 +336,7 @@ public class WechatService {
 					}
 					article.setUrl(url);
 					//图文消息不显示描述，不支持富文本
-					//article.setDescription(news.getDescription());
+					article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
@@ -409,11 +409,11 @@ public class WechatService {
 					if ("common".equals(newsTemplate.getType()))
 						url = bundler.getString("domain") + "/newsItemController.do?goContent&id=" + news.getId();
 					else {
-						url = news.getContent();
+						url = news.getUrl();
 					}
 					article.setUrl(url);
 					//图文消息不显示描述，不支持富文本
-					//article.setDescription(news.getDescription());
+					article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
@@ -457,11 +457,11 @@ public class WechatService {
 					if ("common".equals(newsTemplate.getType()))
 						url = bundler.getString("domain") + "/newsItemController.do?goContent&id=" + news.getId();
 					else {
-						url = news.getContent();
+						url = news.getUrl();
 					}
 					article.setUrl(url);
 					//图文消息不显示描述，不支持富文本
-					//article.setDescription(news.getDescription());
+					article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
@@ -532,11 +532,11 @@ public class WechatService {
 					if ("common".equals(newsTemplate.getType()))
 						url = bundler.getString("domain") + "/newsItemController.do?goContent&id=" + news.getId();
 					else {
-						url = news.getContent();
+						url = news.getUrl();
 					}
 					article.setUrl(url);
 					////图文消息不显示描述，不支持富文本
-					//article.setDescription(news.getDescription());
+					article.setDescription(news.getDescription());
 					articleList.add(article);
 				}
 				NewsMessageResp newsResp = new NewsMessageResp();
