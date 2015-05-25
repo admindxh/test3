@@ -83,6 +83,7 @@ public class CmsFrontController extends BaseController
   @RequestMapping(params={"addorupdate"})
   public ModelAndView addorupdate(WeixinLeaveMsgEntity weixinLeaveMsg, HttpServletRequest req)
   {
+	  weixinLeaveMsg.setAccountid(ResourceUtil.getShangJiaAccountId());
     if (StringUtil.isNotEmpty(weixinLeaveMsg.getId())) {
       weixinLeaveMsg = (WeixinLeaveMsgEntity)this.weixinLeaveMsgService.getEntity(WeixinLeaveMsgEntity.class, weixinLeaveMsg.getId());
       req.setAttribute("weixinLeaveMsgPage", weixinLeaveMsg);
