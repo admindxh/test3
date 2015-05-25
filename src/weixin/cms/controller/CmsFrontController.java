@@ -3,15 +3,12 @@ package weixin.cms.controller;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.MyBeanUtils;
-import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.web.system.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +17,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
 import weixin.cms.entity.WeixinLeaveMsgEntity;
 import weixin.cms.service.WeixinLeaveMsgServiceI;
 import weixin.util.DateUtils;
@@ -51,7 +47,6 @@ public class CmsFrontController extends BaseController
   public AjaxJson leaveMsg(WeixinLeaveMsgEntity weixinLeaveMsg, HttpServletRequest request)
   {
     AjaxJson j = new AjaxJson();
-    weixinLeaveMsg.setAccountid(ResourceUtil.getShangJiaAccountId());
     String id = null;
     if (StringUtil.isNotEmpty(weixinLeaveMsg.getId())) {
       this.message = "留言信息更新成功";
@@ -83,7 +78,6 @@ public class CmsFrontController extends BaseController
   @RequestMapping(params={"addorupdate"})
   public ModelAndView addorupdate(WeixinLeaveMsgEntity weixinLeaveMsg, HttpServletRequest req)
   {
-	  weixinLeaveMsg.setAccountid(ResourceUtil.getShangJiaAccountId());
     if (StringUtil.isNotEmpty(weixinLeaveMsg.getId())) {
       weixinLeaveMsg = (WeixinLeaveMsgEntity)this.weixinLeaveMsgService.getEntity(WeixinLeaveMsgEntity.class, weixinLeaveMsg.getId());
       req.setAttribute("weixinLeaveMsgPage", weixinLeaveMsg);
