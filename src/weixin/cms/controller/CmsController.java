@@ -114,6 +114,7 @@ public class CmsController extends BaseController
       cmsDataCollect.collect(params);
     }
     LogUtil.info("-----------page------"+page);
+    CmsDataContent.loadContent().put("accountid", params.get("accountid"));
     String html = cmsFreemarkerHelper.parseTemplate(page + ".html", CmsDataContent.loadContent());
     response.setContentType("text/html");
     response.setHeader("Cache-Control", "no-store");
