@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- http://www.phpmyadmin.net
 --
--- 生成日期: 2015 年 05 月 22 日 09:36
+-- 生成日期: 2015 年 06 月 01 日 09:19
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -13,7 +13,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- 数据库: `jPsJDZVYRkMNGmzSYcOY`
+-- 数据库: `TtnibMCfcMSJBTwcscbN`
 --
 
 -- --------------------------------------------------------
@@ -1734,6 +1734,12 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('2c9183404d7938da014d793f2abb0012', 'Firefox', '微信单图消息更新成功', 5, '172.17.3.192', '2015-05-22 09:31:32', 1, '4028d881436d514601436d5215ac0043'),
 ('2c9183404d7938da014d793f35360013', 'Firefox', '微信单图消息更新成功', 5, '172.17.3.192', '2015-05-22 09:31:35', 1, '4028d881436d514601436d5215ac0043'),
 ('2c9183404d7940a0014d7941844f0003', 'Firefox', '用户: admin[信息部]登录成功', 1, '172.17.3.192', '2015-05-22 09:34:06', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d9442c0d00000', 'Firefox', '用户: admin[信息部]登录成功', 1, '172.17.3.192', '2015-05-27 15:25:12', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d944308c60001', 'Firefox', '同步菜单信息数据成功！', 4, '172.17.3.192', '2015-05-27 15:25:30', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d9445afbd0004', 'Firefox', '同步菜单信息数据成功！', 4, '172.17.3.192', '2015-05-27 15:28:24', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d94ac482e0007', 'Firefox', '用户: admin[信息部]登录成功', 1, '172.17.3.192', '2015-05-27 17:20:28', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d9592bf3f0013', 'Chrome', '用户: admin[信息部]登录成功', 1, '172.17.3.192', '2015-05-27 21:32:11', 1, '4028d881436d514601436d5215ac0043'),
+('2c9183404d944223014d9eee50f80017', 'Firefox', '用户: admin[信息部]登录成功', 1, '172.17.3.192', '2015-05-29 17:08:47', 1, '4028d881436d514601436d5215ac0043'),
 ('2c9183534d702826014d7031a9d70000', 'Firefox', '用户: admin[信息部]登录成功', 1, '172.17.3.211', '2015-05-20 15:20:12', 1, '4028d881436d514601436d5215ac0043'),
 ('2c9183534d702826014d7033245b0001', 'Chrome', '用户: admin[信息部]登录成功', 1, '172.17.3.211', '2015-05-20 15:21:49', 1, '4028d881436d514601436d5215ac0043'),
 ('2c9183534d70353e014d7035bd020000', 'Chrome', '用户: admin[信息部]登录成功', 1, '172.17.3.211', '2015-05-20 15:24:39', 1, '4028d881436d514601436d5215ac0043'),
@@ -1863,14 +1869,14 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('40288088486f389501486f7042410056', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f7042780057', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f7042ae0058', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
-('40288088486f389501486f7042e00059', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
+('40288088486f389501486f7042e00059', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('40288088486f389501486f704317005a', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f70434c005b', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f704382005c', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f7043bd005d', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f7043f3005e', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:01', 1, '4028d881436d514601436d5215ac0043'),
-('40288088486f389501486f70522f005f', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:05', 1, '4028d881436d514601436d5215ac0043');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('40288088486f389501486f70522f005f', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:05', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f7052600060', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:35:05', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f71d90c0065', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:36:45', 1, '4028d881436d514601436d5215ac0043'),
 ('40288088486f389501486f71d9350066', 'Firefox', '中奖记录删除成功', 4, '192.168.0.8', '2014-09-13 22:36:45', 1, '4028d881436d514601436d5215ac0043'),
@@ -2174,14 +2180,14 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('402881834909adcd014909b5a276001d', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 21:32:18', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909adcd014909b7093a0020', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 21:33:50', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909adcd014909b810280024', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 21:34:58', 1, '4028d881436d514601436d5215ac0043'),
-('402881834909adcd014909b92e720029', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 21:36:11', 1, '4028d881436d514601436d5215ac0043'),
+('402881834909adcd014909b92e720029', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 21:36:11', 1, '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('402881834909dff5014909e175e90000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.3', '2014-10-13 22:20:11', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909dff5014909e1cafd0005', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 22:20:32', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909dff5014909e524ed0009', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 22:24:12', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909dff5014909e774c8000d', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 22:26:44', 1, '4028d881436d514601436d5215ac0043'),
 ('402881834909dff5014909ed90660011', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 22:33:24', 1, '4028d881436d514601436d5215ac0043'),
-('40288183490a0dba01490a0f3f020000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.3', '2014-10-13 23:10:11', 1, '4028d881436d514601436d5215ac0043');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('40288183490a0dba01490a0f3f020000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.3', '2014-10-13 23:10:11', 1, '4028d881436d514601436d5215ac0043'),
 ('40288183490a0dba01490a0fbd830005', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 23:10:44', 1, '4028d881436d514601436d5215ac0043'),
 ('40288183490a19d801490a1b8a980000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.3', '2014-10-13 23:23:37', 1, '4028d881436d514601436d5215ac0043'),
 ('40288183490a19d801490a1bc7350004', 'Chrome', '活动更新成功', 5, '192.168.1.3', '2014-10-13 23:23:53', 1, '4028d881436d514601436d5215ac0043'),
@@ -2482,13 +2488,13 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('402881e747baf1ea0147baf2403d0000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.103', '2014-08-09 21:25:44', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e747baf1ea0147baf4c6a40001', 'Chrome', '用户admin已退出', 2, '192.168.1.103', '2014-08-09 21:28:29', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e747baf1ea0147baf4e7e50002', 'Chrome', '用户: tingfeng[信息部]登录成功', 1, '192.168.1.103', '2014-08-09 21:28:38', 1, '402881e4461f9c6401461fa2e6f50002'),
-('402881e747baf1ea0147bb0a90340003', 'Chrome', '用户tingfeng已退出', 2, '192.168.1.101', '2014-08-09 21:52:17', 1, '402881e4461f9c6401461fa2e6f50002'),
+('402881e747baf1ea0147bb0a90340003', 'Chrome', '用户tingfeng已退出', 2, '192.168.1.101', '2014-08-09 21:52:17', 1, '402881e4461f9c6401461fa2e6f50002');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('402881e747baf1ea0147bb0aa6030004', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.101', '2014-08-09 21:52:23', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e747baf1ea0147bb51f7ea0005', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.101', '2014-08-09 23:10:17', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e747baf1ea0147bb750b9a0006', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.101', '2014-08-09 23:48:35', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e747baf1ea0147bb79d29f0008', 'Chrome', '扩展接口管理添加成功', 3, '192.168.1.101', '2014-08-09 23:53:48', 1, '4028d881436d514601436d5215ac0043'),
-('402881e7490c2b0301490c2b79a00000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.103', '2014-10-14 09:00:16', 1, '4028d881436d514601436d5215ac0043');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('402881e7490c2b0301490c2b79a00000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.103', '2014-10-14 09:00:16', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e7490c2b0301490c2c353c0001', 'Chrome', '用户admin已退出', 2, '192.168.1.103', '2014-10-14 09:01:04', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e7490c2b0301490c2c579a0002', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.1.103', '2014-10-14 09:01:12', 1, '4028d881436d514601436d5215ac0043'),
 ('402881e7490c2b0301490c2cbed30003', 'Chrome', '用户admin已退出', 2, '192.168.1.103', '2014-10-14 09:01:39', 1, '4028d881436d514601436d5215ac0043'),
@@ -2789,13 +2795,13 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('402889f84767413b0147674b45130008', 'Chrome', '用户admin已退出', 2, '192.168.9.120', '2014-07-24 15:34:51', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f84767413b0147674b61a20009', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-24 15:34:59', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f84767413b0147674ba7f2000a', 'Chrome', '用户admin已退出', 2, '192.168.9.120', '2014-07-24 15:35:17', 1, '4028d881436d514601436d5215ac0043'),
-('402889f84767413b0147674c0407000b', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-24 15:35:40', 1, '4028d881436d514601436d5215ac0043'),
+('402889f84767413b0147674c0407000b', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-24 15:35:40', 1, '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('402889f8477ab1ad01477ab2859d0000', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:00:25', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477ac5b901477ac638de0000', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:21:56', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477ac5b901477ac6ea2f0001', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:22:42', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477ac5b901477acfe6460002', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:32:31', 1, '4028d881436d514601436d5215ac0043'),
-('402889f8477ad29d01477ad7c1830000', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:41:05', 1, '4028d881436d514601436d5215ac0043');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('402889f8477ad29d01477ad7c1830000', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:41:05', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477ad29d01477ad88f8d0001', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:41:58', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477ad29d01477ad8e3c70003', 'Chrome', '微站点模板添加成功', 3, '192.168.9.120', '2014-07-28 10:42:20', 1, '4028d881436d514601436d5215ac0043'),
 ('402889f8477adacf01477addfd2f0000', 'Chrome', '用户: admin[信息部]登录成功', 1, '192.168.9.120', '2014-07-28 10:47:54', 1, '4028d881436d514601436d5215ac0043'),
@@ -3090,13 +3096,13 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('402889ff47299a8a014729a169390004', 'Firefox', '更新捷微jeeWX的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:29', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a185df0005', 'Firefox', '更新企业快速开发平台的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:37', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a1a2f80006', 'Firefox', '更新微活动的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:44', 1, '4028d881436d514601436d5215ac0043'),
-('402889ff47299a8a014729a1c0bb0007', 'Firefox', '更新营销工具的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:52', 1, '4028d881436d514601436d5215ac0043'),
+('402889ff47299a8a014729a1c0bb0007', 'Firefox', '更新营销工具的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:52', 1, '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('402889ff47299a8a014729a1daf50008', 'Firefox', '更新微商城的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:12:58', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a201060009', 'Firefox', '更新微网站的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:08', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a21894000a', 'Firefox', '更新刮刮乐的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:14', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a23350000b', 'Firefox', '更新关于我们的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:21', 1, '4028d881436d514601436d5215ac0043'),
-('402889ff47299a8a014729a2518e000c', 'Firefox', '更新社区培训的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:29', 1, '4028d881436d514601436d5215ac0043');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('402889ff47299a8a014729a2518e000c', 'Firefox', '更新社区培训的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:29', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a27006000d', 'Firefox', '更新联系我们的菜单信息信息成功！', 5, '192.168.9.127', '2014-07-12 16:13:37', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a279b8000e', 'Firefox', '同步菜单信息数据失败！', 4, '192.168.9.127', '2014-07-12 16:13:39', 1, '4028d881436d514601436d5215ac0043'),
 ('402889ff47299a8a014729a2c176000f', 'Firefox', '同步菜单信息数据失败！', 4, '192.168.9.127', '2014-07-12 16:13:58', 1, '4028d881436d514601436d5215ac0043'),
@@ -3395,14 +3401,14 @@ INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `opera
 ('4028d881474489d70147448bcaab0000', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:38:37', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d701474494f70c0001', 'Firefox', '用户admin已退出', 2, '192.168.88.1', '2014-07-17 21:48:39', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d7014744955dfb0002', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:49:05', 1, '4028d881436d514601436d5215ac0043'),
-('4028d881474489d701474495b5bf0003', 'Firefox', '用户: ceshi密码重置成功', 5, '192.168.88.1', '2014-07-17 21:49:27', 1, '4028d881436d514601436d5215ac0043'),
+('4028d881474489d701474495b5bf0003', 'Firefox', '用户: ceshi密码重置成功', 5, '192.168.88.1', '2014-07-17 21:49:27', 1, '4028d881436d514601436d5215ac0043');
+INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
 ('4028d881474489d701474495c3940004', 'Firefox', '用户admin已退出', 2, '192.168.88.1', '2014-07-17 21:49:31', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d701474495de470005', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:49:38', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d701474495f5b00006', 'Firefox', '用户admin已退出', 2, '192.168.88.1', '2014-07-17 21:49:44', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d7014744966c3a0007', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:50:14', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d7014744969efe0008', 'Firefox', '用户admin已退出', 2, '192.168.88.1', '2014-07-17 21:50:27', 1, '4028d881436d514601436d5215ac0043'),
-('4028d881474489d701474496cad00009', 'Firefox', '用户: ceshi[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:50:38', 1, '402881e44648134a014648174a45000c');
-INSERT INTO `t_s_log` (`ID`, `broswer`, `logcontent`, `loglevel`, `note`, `operatetime`, `operatetype`, `userid`) VALUES
+('4028d881474489d701474496cad00009', 'Firefox', '用户: ceshi[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:50:38', 1, '402881e44648134a014648174a45000c'),
 ('4028d881474489d7014744971411000a', 'Firefox', '用户ceshi已退出', 2, '192.168.88.1', '2014-07-17 21:50:57', 1, '402881e44648134a014648174a45000c'),
 ('4028d881474489d70147449733e2000b', 'Firefox', '用户: admin[信息部]登录成功', 1, '192.168.88.1', '2014-07-17 21:51:05', 1, '4028d881436d514601436d5215ac0043'),
 ('4028d881474489d70147449868fc0023', 'Firefox', '用户admin已退出', 2, '192.168.88.1', '2014-07-17 21:52:24', 1, '4028d881436d514601436d5215ac0043'),
@@ -4588,7 +4594,7 @@ CREATE TABLE IF NOT EXISTS `weixin_account` (
 --
 
 INSERT INTO `weixin_account` (`id`, `accountname`, `accounttoken`, `accountnumber`, `accounttype`, `accountemail`, `accountdesc`, `accountaccesstoken`, `accountappid`, `accountappsecret`, `ADDTOEKNTIME`, `USERNAME`, `WEIXIN_ACCOUNTID`) VALUES
-('402881e8461795c201461795c2e90000', '成都永辉科技有限公司', 'dxhnihao', 'gh_b2a51a1013e8', '1', '652356756@@qq.com', '无', 'sNtS-PgfGp7htl0JccNRkJ4B0TlfWJ7yLRSqVICzj3xEk8uL_2V2a5S8NIW8hk6Au095Pt6e6OspBWKn9hInCYqI4mnJAXMq6oDmcTzMt28', 'wx60948a85e051f738', 'e23379551673977d2fb4419d86466577', '2015-05-21 11:41:58', 'admin', 'gh_b2a51a1013e8');
+('402881e8461795c201461795c2e90000', '成都永辉科技有限公司', 'dxhnihao', 'gh_b2a51a1013e8', '1', '652356756@@qq.com', '无', 'spHR2UzRfU2npsCE-VbLgs4m7Ech1bMr8-HE53fbxJZGmToYfJasnM4KQD0KRszS32mGlLdKBUQ5gPR-Abq1yh1QQxH3iRHVuV4QXmqopiA', 'wx60948a85e051f738', 'e23379551673977d2fb4419d86466577', '2015-05-29 17:10:43', 'admin', 'gh_b2a51a1013e8');
 
 -- --------------------------------------------------------
 
@@ -6154,11 +6160,32 @@ INSERT INTO `weixin_receiveevent` (`ID`, `accountid`, `createtime`, `events`, `e
 ('2c9183404d7940a0014d7940f82f0001', '402881e8461795c201461795c2e90000', '1432258383', 'CLICK', 'c0201', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-22 09:33:30', NULL, 'gh_b2a51a1013e8'),
 ('2c9183404d7940a0014d7940f82f0002', '402881e8461795c201461795c2e90000', '1432258383', 'CLICK', 'c0201', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-22 09:33:30', NULL, 'gh_b2a51a1013e8'),
 ('2c9183404d7940a0014d79421b620004', '402881e8461795c201461795c2e90000', '1432258485', 'CLICK', 'c0204', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-22 09:34:45', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9445439d0002', '402881e8461795c201461795c2e90000', '1432711676', 'CLICK', 'gsdlxx', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 15:27:56', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d944566a30003', '402881e8461795c201461795c2e90000', '1432711685', 'CLICK', 'gsdlxx', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 15:28:05', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9445f78a0005', '402881e8461795c201461795c2e90000', '1432711722', 'CLICK', 'toupiao', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 15:28:42', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d944605c30006', '402881e8461795c201461795c2e90000', '1432711726', 'CLICK', 'c0204', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 15:28:46', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9510a5ac0008', '402881e8461795c201461795c2e90000', '1432725005', 'CLICK', 'toupiao', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 19:10:05', NULL, 'gh_b2a51a1013e8');
+INSERT INTO `weixin_receiveevent` (`ID`, `accountid`, `createtime`, `events`, `eventkey`, `fromusername`, `latitude`, `longitude`, `msgtype`, `precisions`, `receivetime`, `ticket`, `tousername`) VALUES
+('2c9183404d944223014d95111e660009', '402881e8461795c201461795c2e90000', '1432725036', 'CLICK', 'toupiao', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:10:36', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d951137ae000a', '402881e8461795c201461795c2e90000', '1432725043', 'CLICK', 'c0204', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:10:43', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d95114c6c000b', '402881e8461795c201461795c2e90000', '1432725048', 'CLICK', 'gsdlxx', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:10:48', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d951170e8000c', '402881e8461795c201461795c2e90000', '1432725057', 'CLICK', 'gsdlxx', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:10:57', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d95119a98000d', '402881e8461795c201461795c2e90000', '1432725068', 'CLICK', 'gsdlxx', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 19:11:08', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9511b021000e', '402881e8461795c201461795c2e90000', '1432725073', 'CLICK', 'c0204', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 19:11:13', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9512ccda000f', '402881e8461795c201461795c2e90000', '1432725146', 'CLICK', 'gsdlxx', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:12:26', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9512e2b80010', '402881e8461795c201461795c2e90000', '1432725152', 'CLICK', 'c0204', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 19:12:32', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d951368b80011', '402881e8461795c201461795c2e90000', '1432725186', 'CLICK', 'toupiao', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-27 19:13:06', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d951d36bd0012', '402881e8461795c201461795c2e90000', '1432725829', 'CLICK', 'c0204', 'oxIKHuN4X5Z9ExmXjSpLagOr-tIg', NULL, NULL, 'event', NULL, '2015-05-27 19:23:49', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9637ceb40014', '402881e8461795c201461795c2e90000', '1432744349', 'CLICK', 'c0204', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-28 00:32:29', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9d0ce1af0015', '402881e8461795c201461795c2e90000', '1432858976', 'VIEW', 'http://yhsoft.duapp.com/', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-29 08:22:56', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014d9d0fe70c0016', '402881e8461795c201461795c2e90000', '1432859174', 'CLICK', 'c0201', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-29 08:26:14', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014da867cd810018', '402881e8461795c201461795c2e90000', '1433049484', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?goGsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuJL1j8enWsdg3nEyWPW1puk', NULL, NULL, 'event', NULL, '2015-05-31 13:18:04', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014da8682aa80019', '402881e8461795c201461795c2e90000', '1433049508', 'VIEW', 'http://yhsoft.duapp.com/', 'oxIKHuJL1j8enWsdg3nEyWPW1puk', NULL, NULL, 'event', NULL, '2015-05-31 13:18:28', NULL, 'gh_b2a51a1013e8'),
+('2c9183404d944223014da8685b19001a', '402881e8461795c201461795c2e90000', '1433049520', 'CLICK', 'toupiao', 'oxIKHuJL1j8enWsdg3nEyWPW1puk', NULL, NULL, 'event', NULL, '2015-05-31 13:18:40', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d70353e014d70380cad0003', '402881e8461795c201461795c2e90000', '1432106830', 'VIEW', 'http://yhsoft.duapp.com/guanyuwomen.html', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:27:11', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d70353e014d703945590006', '402881e8461795c201461795c2e90000', '1432106910', 'CLICK', 'lxwm', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:28:31', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d70353e014d7039655e0007', '402881e8461795c201461795c2e90000', '1432106919', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?gsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:28:39', NULL, 'gh_b2a51a1013e8'),
-('2c9183534d70353e014d703995530008', '402881e8461795c201461795c2e90000', '1432106931', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?gsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:28:51', NULL, 'gh_b2a51a1013e8');
-INSERT INTO `weixin_receiveevent` (`ID`, `accountid`, `createtime`, `events`, `eventkey`, `fromusername`, `latitude`, `longitude`, `msgtype`, `precisions`, `receivetime`, `ticket`, `tousername`) VALUES
+('2c9183534d70353e014d703995530008', '402881e8461795c201461795c2e90000', '1432106931', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?gsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:28:51', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d70353e014d7039aa020009', '402881e8461795c201461795c2e90000', '1432106936', 'VIEW', 'http://yhsoft.duapp.com/', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:28:56', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d703aa3014d703b00fe0000', '402881e8461795c201461795c2e90000', '1432106981', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?gsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:30:24', NULL, 'gh_b2a51a1013e8'),
 ('2c9183534d703aa3014d703b00fe0001', '402881e8461795c201461795c2e90000', '1432106981', 'VIEW', 'http://yhwxsoft.duapp.com/jeecgwx/cmsController.do?gsjs&page=gsjs&accountid=402881e8461795c201461795c2e90000', 'oxIKHuLHuof1zl0h1P8dyKj1r6as', NULL, NULL, 'event', NULL, '2015-05-20 15:30:24', NULL, 'gh_b2a51a1013e8'),
@@ -7252,9 +7279,9 @@ ALTER TABLE `t_s_user`
 --
 ALTER TABLE `weixin_awards_award`
   ADD CONSTRAINT `FK_abwq6mo6cvp27syb618w3jupf` FOREIGN KEY (`huodong_id`) REFERENCES `weixin_huodong` (`id`),
-  ADD CONSTRAINT `FK_kgvd4dso2dfe53fgtxaj1t6jc` FOREIGN KEY (`huoDongAwardEntity_id`) REFERENCES `weixin_huodong_awards` (`ID`),
+  ADD CONSTRAINT `FK_kgvd4dso2dfe53fgtxaj1t6jc` FOREIGN KEY (`huoDongAwardEntity_id`) REFERENCES `weixin_huodong_awards` (`id`),
   ADD CONSTRAINT `FK_rp4b6isg6nyrdy9scdw41lggp` FOREIGN KEY (`award_id`) REFERENCES `weixin_award` (`id`),
-  ADD CONSTRAINT `FK_t56wndtomibhs8fieiimgq8v6` FOREIGN KEY (`awards_level_id`) REFERENCES `weixin_awards_level` (`ID`);
+  ADD CONSTRAINT `FK_t56wndtomibhs8fieiimgq8v6` FOREIGN KEY (`awards_level_id`) REFERENCES `weixin_awards_level` (`id`);
 
 --
 -- 限制表 `weixin_bbs_post`
@@ -7299,7 +7326,7 @@ ALTER TABLE `weixin_leave_msg_reply`
 -- 限制表 `weixin_member_coupon`
 --
 ALTER TABLE `weixin_member_coupon`
-  ADD CONSTRAINT `FK_6y70y2f7s5r3ljyo3ovq5wcar` FOREIGN KEY (`couponid`) REFERENCES `weixin_promotion_coupon` (`ID`),
+  ADD CONSTRAINT `FK_6y70y2f7s5r3ljyo3ovq5wcar` FOREIGN KEY (`couponid`) REFERENCES `weixin_promotion_coupon` (`id`),
   ADD CONSTRAINT `FK_cwy9h77t3o3cfw7k2hvyo23x` FOREIGN KEY (`member_vip_id`) REFERENCES `weixin_vip_member` (`ID`);
 
 --
