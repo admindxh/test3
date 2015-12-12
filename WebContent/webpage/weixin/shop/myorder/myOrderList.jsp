@@ -48,7 +48,7 @@
 			<a href="weixinShopDealController.do?gomyorder&shopSymbol=shop&accountid=${accountId}" class="uc">用户中心</a>
 		</div>
 		<div>
-			<a href="weixinShopCartController.do?goCart&shopSymbol=shop&accountid=${accountId}" class="cart">购物车<i class="cart_com">1</i></a>
+			<a href="weixinShopCartController.do?goCart&shopSymbol=shop&accountid=${accountId}" class="cart">购物车<i class="cart_com"></i></a>
 		</div>
 	</div>
 	<ul class="sub-menu-list">
@@ -96,7 +96,7 @@
 						<c:if test="${order.dealStatement=='未支付'}">
 							<div class="m-cart-toal m-checkout-toal">
 								<p class="act">
-									<a id="sub_order" href="weixinShopDealController.do?goPayPage&id=${orderDetail.id}&paytype=${orderDetail.paytype}" class="checkout">立即支付</a>
+									<a id="sub_order" href="weixinShopDealController.do?goPayPage&id=${order.id}&paytype=${order.paytype}" class="checkout">立即支付</a>
 								</p>
 							</div>
 						</c:if>

@@ -61,7 +61,7 @@ public class WeixinVipMemberController extends BaseController
     CriteriaQuery cq = new CriteriaQuery(WeixinVipMemberEntity.class, dataGrid);
 
     List list = this.weixinVipInfoService.findByProperty(WeixinVipInfoEntity.class, "accountid", ResourceUtil.getShangJiaAccountId());
-    cq.in("vipInfo", list.toArray());
+    //cq.in("vipInfo", list.toArray());
     HqlGenerateUtil.installHql(cq, weixinVipMember, request.getParameterMap());
     this.weixinVipMemberService.getDataGridReturn(cq, true);
     TagUtil.datagrid(response, dataGrid);

@@ -6,11 +6,15 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.exception.BusinessException;
@@ -32,7 +36,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+
+
 import weixin.alipay.config.AlipayConfig;
+import weixin.alipay.util.AlipayCore;
+import weixin.alipay.util.AlipayNotify;
 import weixin.alipay.vo.PayParamsVo;
 import weixin.guanjia.account.entity.WeixinAccountEntity;
 import weixin.guanjia.pay.entity.PayConfigEntity;
@@ -99,7 +108,7 @@ public class WeixinShopDealController extends BaseController {
 		if (StringUtil.isEmpty(id)) {
 			String leaveword = request.getParameter("leaveword");
 
-			String payType = request.getParameter("payType");
+			String payType = request.getParameter("paytype");
 
 			String addressId = request.getParameter("addressid");
 
@@ -155,7 +164,9 @@ public class WeixinShopDealController extends BaseController {
 					.parseDouble(totalExpressPrice));
 
 			if ("1".equals(payType)) {
-				weixinShopOrder.setPaytype("银联支付");
+				
+				//weixinShopOrder.setPaytype("银联支付");
+				
 			}
 
 			double yfje = Double.parseDouble(totalMoney);
@@ -451,6 +462,54 @@ public class WeixinShopDealController extends BaseController {
 		}
 		return params;
 	}
+	@RequestMapping("paystatus")
+	public void paystatus(HttpServletRequest request,
+			HttpServletResponse response) {
+		Map<String, String> params = new HashMap<String, String>();
+//		HttpServletRequest request = ServletActionContext.getRequest();
+		Map requestParams = request.getParameterMap();
+		for (Iterator iter = requestParams.keySet().iterator(); iter.hasNext();) {
+			String name = (String) iter.next();
+			String[] values = (String[]) requestParams.get(name);
+			String valueStr = "";
+			for (int i = 0; i < values.length; i++) {
+				valueStr = (i == values.length - 1) ? valueStr + values[i] : valueStr + values[i] + ",";
+			}
+			// valueStr = new String(valueStr.getBytes("ISO-8859-1"), "gbk");
+			params.put(name, valueStr);
+		}
+		System.out.println("---------------------------------------------------------------------------");
+		System.out.println("Out_trade_no-----"+StringUtils.isNotBlank(params.get("Out_trade_no")));
+		System.out.println("Trade_no-----"+StringUtils.isNotBlank(params.get("Trade_no")));
+		System.out.println("Trade_status-----"+params.get("Trade_status"));
+		System.out.println("params-----------" + AlipayNotify.verify(params));
+		System.out.println("---------------------------------------------------------------------------");
+		if (StringUtils.isNotBlank(params.get("Out_trade_no")) && StringUtils.isNotBlank(params.get("Trade_no")) && StringUtils.isNotBlank(params.get("Trade_status"))) {
+			if (AlipayNotify.verify(params)) {
+				if (params.get("Trade_status").equals("TRADE_FINISHED")) {
+					WeixinShopDealEntity weixinShopDealEntity = this.weixinShopDealService.get(WeixinShopDealEntity.class, params.get("Out_trade_no"));
+					weixinShopDealEntity.setDealStatement("已支付");
+				weixinShopDealService.updateEntitie(weixinShopDealEntity);
+				} else if (params.get("Trade_status").equals("TRADE_SUCCESS")) {
+					WeixinShopDealEntity weixinShopDealEntity = this.weixinShopDealService.get(WeixinShopDealEntity.class, params.get("Out_trade_no"));
+					weixinShopDealService.updateEntitie(weixinShopDealEntity);
+				}
+			}
+		}
+		//return new ModelAndView("weixin/shop/myorder/success");
+	}
+	
+	@RequestMapping("success")
+	public ModelAndView success(HttpServletRequest request,
+			HttpServletResponse response) {
+	
+		return new ModelAndView("weixin/shop/myorder/success");
+	}
+	
+	
+	
+	
+	
 
 	public void alipaydirectRequest(HttpServletRequest request,
 			HttpServletResponse response, WeixinShopDealEntity order,
@@ -487,11 +546,9 @@ public class WeixinShopDealController extends BaseController {
 
 		String show_url = "";
 
-		String notify_url = "http://jeewx.com/jeewx?method=alipayResponse&pid="
-				+ order.getPayNumber();
+		String notify_url = "http://localhost/"+request.getContextPath()+"/weixinShopDealController/paystatus";
 
-		String return_url = "http://jeewx.com/jeewx?method=alipayResponse&pid="
-				+ order.getPayNumber();
+		String return_url ="http://localhost/"+request.getContextPath()+"/weixinShopDealController/success";
 
 		String out_trade_no = order.getDealNumber();
 
@@ -575,7 +632,7 @@ public class WeixinShopDealController extends BaseController {
 			String key = (String) keys.get(i);
 			String value = (String) sArray.get(key);
 
-			if ((!value.equals("")) && (value != null)
+			if ((value != null)&& (!value.equals("")) 
 					&& (!key.equalsIgnoreCase("sign"))
 					&& (!key.equalsIgnoreCase("sign_type"))
 					&& (!key.equalsIgnoreCase("method"))) {

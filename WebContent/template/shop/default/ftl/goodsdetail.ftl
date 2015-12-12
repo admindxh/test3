@@ -338,7 +338,7 @@ $(function(){
     </div>
 </div>
 <div class="mfooter" id="wxgjfooter" style="text-align: center;width: 100%;height: 20px;line-height: 20px;margin-top:10px;">
-<span class="sp2"><a href="http://www.jeecg.org/" style="color: #5e5e5e;font-size: 12px;"> 技术支持：捷微团队JeeWx</a></span>
+<span class="sp2"><a href="http://www.jeecg.org/" style="color: #5e5e5e;font-size: 12px;"> 技术支持：永辉团队JeeWx</a></span>
 </div>
 <script>
 /**

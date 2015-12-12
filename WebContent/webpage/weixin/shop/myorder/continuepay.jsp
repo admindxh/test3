@@ -219,7 +219,7 @@
 <!--foot-->
 <div class="wx_footer">
     <div class="mfooter" id="wxgjfooter" style="text-align: center;width: 100%;height: 20px;line-height: 20px;margin-top:10px;">
-        <span class="sp2"><a href="http://www.weixinguanjia.cn/weiweb/3702/" style="color: #5e5e5e;font-size: 12px;"> 技术支持：捷微团队JeeWx</a></span>
+        <span class="sp2"><a href="http://www.weixinguanjia.cn/weiweb/3702/" style="color: #5e5e5e;font-size: 12px;"> 技术支持：永辉团队JeeWx</a></span>
     </div>
     <div style="width: 0px;height: 0px;overflow: hidden;">
         <script src="./确认购买_files/z_stat.php" language="JavaScript"></script><script src="./确认购买_files/core.php" charset="utf-8" type="text/javascript"></script><a href="http://www.cnzz.com/stat/website.php?web_id=1000151448" target="_blank" title="站长统计">站长统计</a>

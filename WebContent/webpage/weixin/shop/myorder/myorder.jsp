@@ -53,7 +53,7 @@
 				     <a href="weixinVipController.do?goPage&page=index&shopSymbol=shop" class="uc">用户中心</a>
 				 </div>
 				 <div>
-				     <a href="weixinShopCartController.do?goCart&shopSymbol=shop" class="cart">购物车<i class="cart_com">1</i></a>
+				     <a href="weixinShopCartController.do?goCart&shopSymbol=shop" class="cart">购物车<i class="cart_com"></i></a>
 				 </div>
         </div>
          <ul class="sub-menu-list">

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>捷微团队</title>
+	<title>永辉团队</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- Mobile Devices Support @begin -->
@@ -178,17 +178,17 @@ document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
 			var _share_img = $('body img:eq(0)').attr("src");
 	if(typeof(_share_img) == "undefined") _share_img = "http://wx.we7.cc/source/modules/album/icon.jpg";
 	if(_share_img.indexOf("http://") == -1 || _share_img.indexOf("https://") == -1 ) _share_img = "http://wx.we7.cc/" + _share_img;
-			var _share_content = _removeHTMLTag($('body').html()).replace("捷微团队",'');
+			var _share_content = _removeHTMLTag($('body').html()).replace("永辉团队",'');
 		window.shareData = {
 		"imgUrl": _share_img,
 		"timeLineLink": "http://wx.we7.cc/mobile.php?act=module&id=3&weid=1&name=album&do=detail&wxref=mp.weixin.qq.com&wxref=mp.weixin.qq.com",
 		"sendFriendLink": "http://wx.we7.cc/mobile.php?act=module&id=3&weid=1&name=album&do=detail&wxref=mp.weixin.qq.com&wxref=mp.weixin.qq.com",
 		"weiboLink": "http://wx.we7.cc/mobile.php?act=module&id=3&weid=1&name=album&do=detail&wxref=mp.weixin.qq.com&wxref=mp.weixin.qq.com",
-		"tTitle": "捷微团队",
+		"tTitle": "永辉团队",
 		"tContent":  _share_content,
-		"fTitle": "捷微团队",
+		"fTitle": "永辉团队",
 		"fContent":  _share_content,
-		"wContent":  "捷微团队"
+		"wContent":  "永辉团队"
 	};
 
 	// 发送给好友

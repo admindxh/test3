@@ -106,7 +106,7 @@ function del(id){
     <div class="footnav clearfix">
 
     </div>
-    <p class="copright">Copyright © 2014-2015 捷微团队 </p>
+    <p class="copright">Copyright © 2014-2015 永辉团队 </p>
   </div>
       <a href="http://m.vip.com/cart-address.html?mk=1&cart_address_id=36535410#top" class="backtop" mars_sead="home_foot_top_btn"></a>
     <div class="space10"></div>

@@ -52,7 +52,7 @@
 			<a href="weixinShopDealController.do?gomyorder&shopSymbol=shop&accountid=${accountId}" class="uc">用户中心</a>
 		</div>
 		<div>
-			<a href="weixinShopCartController.do?goCart&shopSymbol=shop&accountid=${accountId}" class="cart">购物车<i class="cart_com">1</i></a>
+			<a href="weixinShopCartController.do?goCart&shopSymbol=shop&accountid=${accountId}" class="cart">购物车<i class="cart_com"></i></a>
 		</div>
 	</div>
 	<ul class="sub-menu-list">
@@ -79,7 +79,7 @@
 	            	    <label><input type="radio" name="addressid" checked="checked" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
 	            	</c:when>
 	            	<c:otherwise>
-	            	 <label><input type="radio" name="addressid" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
+	            	 <label><input type="radio" name="addressid" checked="checked" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
 	            	</c:otherwise>
 	            	</c:choose>
 	            </c:if>
@@ -89,7 +89,7 @@
 	            	 <label><input type="radio" name="addressid" checked="checked" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
 	            	</c:when>
 	            	<c:otherwise>
-	            	 <label><input type="radio" name="addressid" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
+	            	 <label><input type="radio" name="addressid" checked="checked" value="${address.id }" />${address.realname }  ${address.province} ${address.city } ${address.area } ${address.address } ${address.tel } </label>
 	            	</c:otherwise>
 	            	</c:choose>
 	            </c:if>
@@ -97,7 +97,6 @@
 	            </li>
 	          </c:forEach>   
 	            <li class="error" id="noToneTip" style="display:block;">
-	                <a href="javascript:toAddr();" style="color: inherit;">点击管理收货地址，方便更快收货</a>
 	            </li>
 			</ul>
 		</div>

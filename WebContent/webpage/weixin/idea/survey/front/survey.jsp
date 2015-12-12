@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0111)http://wx.we7.cc/mobile.php?act=module&do=survey&name=survey&id=1&weid=1&wxref=mp.weixin.qq.com#wechat_redirect -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>捷微团队-微调研</title>
+	<title>永辉团队-微调研</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- Mobile Devices Support @begin -->

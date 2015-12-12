@@ -70,7 +70,7 @@
                     </div>
                     <!-- <p class="page-toolbar" id="js_toobar">
                         <a href="http://www.jeewx.com" class="page-imform">
-                         	 捷微团队
+                         	 永辉团队
                         </a>
                     </p> -->
                 </div>

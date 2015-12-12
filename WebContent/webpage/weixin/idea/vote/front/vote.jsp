@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="http://www.uejukebao.com/wxplat/wxcore/assets/business/vote/common.css">
 <link rel="stylesheet" href="http://www.uejukebao.com/wxplat/wxcore/assets/business/vote/vote.css">
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
-<title>微投票-捷微团队</title>
+<title>微投票-永辉团队</title>
 </head>
 <body>
 	<div class="wrapper" style="width: 100%" >
@@ -23,7 +23,7 @@
 				<div class="count">${weixinVote.voteCount }</div>
 			</div>
 			<div class="title-cont">
-				<p class="title">微投票-捷微团队</p>
+				<p class="title">微投票-永辉团队</p>
 				<p class="timeout"><img class="clock" src="plug-in/weixin/vote/image/clock.png"><span class="text">距离投票结束还有0天0小时0分0秒</span></p>
 			</div>
 		</div>
@@ -56,7 +56,7 @@
 
 
  	<p class="page-url">
-		<a href="http://www.jeewx.com/" target="_blank" class="page-url-link">捷微团队</a>
+		<a href="http://www.jeewx.com/" target="_blank" class="page-url-link">永辉团队</a>
 	</p>
 
 

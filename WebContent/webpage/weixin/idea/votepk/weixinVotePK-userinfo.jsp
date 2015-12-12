@@ -47,7 +47,7 @@ WeixinJSBridge.call('hideToolbar');
         </div>
         <div class="div">
         <p class="pink_1">求投票攻略</p>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亲爱的小伙伴们快打开微信“扫一扫”，扫描右侧二维码，关注“捷微团队”微信平台，就能为我成功投上一票。（PS. 够义气就继续分享活动，我还能再多4票！） 
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亲爱的小伙伴们快打开微信“扫一扫”，扫描右侧二维码，关注“永辉团队”微信平台，就能为我成功投上一票。（PS. 够义气就继续分享活动，我还能再多4票！） 
         </div>
     </div>
         <div class="div_1">

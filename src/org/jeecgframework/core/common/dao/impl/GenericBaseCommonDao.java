@@ -724,8 +724,6 @@ public abstract class GenericBaseCommonDao<T, PK extends Serializable>
 		} else {
 			pageSize = allCounts;
 		}
-		// DetachedCriteriaUtil.selectColumn(cq.getDetachedCriteria(),
-		// cq.getField().split(","), cq.getClass1(), false);
 		List list = criteria.list();
 		cq.getDataGrid().setResults(list);
 		cq.getDataGrid().setTotal(allCounts);
