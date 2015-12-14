@@ -1,6 +1,10 @@
 package weixin.shop.base.controller;
 
+import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.charset.Charset;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -11,10 +15,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.net.ssl.SSLContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
+import org.apache.http.Header;
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.client.methods.RequestBuilder;
+import org.apache.http.conn.ssl.SSLConnectionSocketFactory;
+import org.apache.http.conn.ssl.SSLContexts;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+import org.apache.http.message.BasicHeader;
+import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.exception.BusinessException;
@@ -36,6 +55,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+
+
+
+
+
+
+
 
 
 
@@ -78,6 +105,7 @@ public class WeixinShopDealController extends BaseController {
 	@Autowired
 	private WeixinShopGoodsServiceI weixinShopGoodsService;
 	private String message;
+	protected static Header xmlHeader = new BasicHeader(HttpHeaders.CONTENT_TYPE, ContentType.APPLICATION_XML.toString());
 
 	public String getMessage() {
 		return this.message;
@@ -265,14 +293,80 @@ public class WeixinShopDealController extends BaseController {
 					receive_name, receive_address, receive_zip, receive_phone,
 					receive_mobile, 1);
 			alipaydirectRequest(request, response, weixinShopOrder, params, pay);
-		} else {
+		} 
+		//微信支付
+		else if("2".equals(weixinShopOrder.getPaytype())){
+			
+			UnifiedorderXML unifiedorder = new UnifiedorderXML();
+			String ip = request.getLocalAddr();
+			unifiedorder.setAttach("订单：" + weixinShopOrder.getDealNumber());
+			unifiedorder.setBody(weixinShopOrder.getCreateName() + "-" + weixinShopOrder.getDealTime());
+	     	unifiedorder.setOpenid(ResourceUtil.getUserOpenId());
+			unifiedorder.setOut_trade_no(weixinShopOrder.getDealNumber());
+			unifiedorder.setSpbill_create_ip(ip);
+			unifiedorder.setTotal_fee(weixinShopOrder.getSfmny() * 100 + "");
+			System.out.println(weixinShopOrder.getDealNumber());
+			String prepay_id = GetPrepay(unifiedorder);
+			System.err.println(prepay_id);
+			unifiedorder.setPrepay_id(prepay_id);
+			request.setAttribute("unifiedorder", unifiedorder);
+			weixinShopOrder.setBuyerId(prepay_id);
+			request.setAttribute("weixinShopOrder", weixinShopOrder);
+			 return new ModelAndView("weixin/shop/pay/pay");
+			
+		}
+		
+		else {
 			String responseText = "<a href=\"weixinShopDealController.do?gomyorder&shopSymbol=shop\">恭喜您，已经下单成功！点击这里查看订单！</a>";
 			request.setAttribute("responseText", responseText);
 		}
 
 		return new ModelAndView("weixin/shop/pay/pay");
 	}
+	public static String GetPrepay(UnifiedorderXML unifiedorder) {
+		String xml = unifiedorder.getXml();
+		// System.err.println(xml);
+		String prepay_id = null;
 
+		HttpUriRequest httpUriRequest = RequestBuilder.post().setHeader(xmlHeader).setUri("https://api.mch.weixin.qq.com/pay/unifiedorder")
+				.setEntity(new StringEntity(xml, Charset.forName("utf-8"))).build();
+		HttpClient httpClient = createHttpClient(100, 10);
+		try {
+			HttpResponse r = httpClient.execute(httpUriRequest);
+			String xmlrResult = EntityUtils.toString(r.getEntity(), "UTF-8");
+			System.out.println(xmlrResult);
+			String[] xmlrResults = xmlrResult.split("<prepay_id>");
+			if (xmlrResults.length > 1) {
+				xmlrResult = xmlrResults[1];
+				xmlrResults = xmlrResult.split("</prepay_id>");
+				if (xmlrResults.length > 1) {
+					xmlrResult = xmlrResults[0];
+					prepay_id = xmlrResult.replace("<![CDATA[", "").replaceAll("]]>", "");
+				}
+			}
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return prepay_id;
+	}
+	public static HttpClient createHttpClient(int maxTotal, int maxPerRoute) {
+		try {
+			SSLContext sslContext = SSLContexts.custom().useSSL().build();
+			SSLConnectionSocketFactory sf = new SSLConnectionSocketFactory(sslContext, SSLConnectionSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
+			PoolingHttpClientConnectionManager poolingHttpClientConnectionManager = new PoolingHttpClientConnectionManager();
+			poolingHttpClientConnectionManager.setMaxTotal(maxTotal);
+			poolingHttpClientConnectionManager.setDefaultMaxPerRoute(maxPerRoute);
+			return HttpClientBuilder.create().setConnectionManager(poolingHttpClientConnectionManager).setSSLSocketFactory(sf).build();
+		} catch (KeyManagementException e) {
+			e.printStackTrace();
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	@RequestMapping(params = { "goList" })
 	public ModelAndView goList(HttpServletRequest request) {
 		return new ModelAndView("weixin/shop/myorder/dealsList");
@@ -487,12 +581,14 @@ public class WeixinShopDealController extends BaseController {
 		if (StringUtils.isNotBlank(params.get("Out_trade_no")) && StringUtils.isNotBlank(params.get("Trade_no")) && StringUtils.isNotBlank(params.get("Trade_status"))) {
 			if (AlipayNotify.verify(params)) {
 				if (params.get("Trade_status").equals("TRADE_FINISHED")) {
-					WeixinShopDealEntity weixinShopDealEntity = this.weixinShopDealService.get(WeixinShopDealEntity.class, params.get("Out_trade_no"));
+					
+					WeixinShopDealEntity weixinShopDealEntity = weixinShopDealService.findUniqueByProperty(WeixinShopDealEntity.class, "dealNumber", params.get("Out_trade_no"));
+					weixinShopDealEntity.setDealStatement("已支付");
+				    weixinShopDealService.updateEntitie(weixinShopDealEntity);
+				} else if (params.get("Trade_status").equals("TRADE_SUCCESS")) {
+					WeixinShopDealEntity weixinShopDealEntity = weixinShopDealService.findUniqueByProperty(WeixinShopDealEntity.class, "dealNumber", params.get("Out_trade_no"));
 					weixinShopDealEntity.setDealStatement("已支付");
 				weixinShopDealService.updateEntitie(weixinShopDealEntity);
-				} else if (params.get("Trade_status").equals("TRADE_SUCCESS")) {
-					WeixinShopDealEntity weixinShopDealEntity = this.weixinShopDealService.get(WeixinShopDealEntity.class, params.get("Out_trade_no"));
-					weixinShopDealService.updateEntitie(weixinShopDealEntity);
 				}
 			}
 		}
@@ -502,7 +598,20 @@ public class WeixinShopDealController extends BaseController {
 	@RequestMapping("success")
 	public ModelAndView success(HttpServletRequest request,
 			HttpServletResponse response) {
-	
+		String id = request.getParameter("id");
+		
+		
+		if(StringUtils.isNotEmpty(id)){
+		String type=request.getParameter("type");
+			if (type.equals("s")) {
+				WeixinShopDealEntity weixinShopDealEntity = weixinShopDealService.get(WeixinShopDealEntity.class, id);
+				weixinShopDealEntity.setDealStatement("支付成功");
+				weixinShopDealService.updateEntitie(weixinShopDealEntity);
+				return new ModelAndView("weixin/shop/myorder/success");
+			}else{
+				return new ModelAndView("weixin/shop/myorder/flase");	
+			}
+		}
 		return new ModelAndView("weixin/shop/myorder/success");
 	}
 	

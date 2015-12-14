@@ -58,7 +58,7 @@
         </div>
         
         <div class="wx_wrap">
-			 支付成功
+			 支付失败
             
     </div>
 </div>

@@ -13,6 +13,7 @@ public class WeixinShopFreemarkerHelper
 
   public WeixinShopFreemarkerHelper(String dir) {
     try {
+    	System.out.println("_tplConfig===="+_tplConfig+"tplName:-------"+dir+"======new File(dir)=="+new File(dir));
       _tplConfig.setDirectoryForTemplateLoading(new File(dir));
     }
     catch (IOException e) {
@@ -26,6 +27,7 @@ public class WeixinShopFreemarkerHelper
     {
       StringWriter swriter = new StringWriter();
       Template mytpl = null;
+      System.out.println("tplName:-------"+tplName);
       mytpl = _tplConfig.getTemplate(tplName, encoding);
       mytpl.process(paras, swriter);
       return swriter.toString();

@@ -49,7 +49,7 @@ public class WeixinShopController extends BaseController
     ResourceUtil.initQianTaiRequestAccountId(request);
 
     String accountId = request.getParameter("accountid");
-    String openId = request.getParameter("openId");
+    String openId = request.getParameter("openid");
     HttpSession session = request.getSession();
 
     if (StringUtils.isNotEmpty(accountId))
@@ -61,7 +61,10 @@ public class WeixinShopController extends BaseController
     {
       session.setAttribute("USER_OPENID", openId);
     }
-
+    
+    System.out.println("accountid------"+accountId+"---------opneid-----"+openId);
+  
+    
     if (dataCollectContent.get(page) != null) {
       ShopDataCollectI shopDataCollect = (ShopDataCollectI)dataCollectContent.get(page);
       shopDataCollect.collect(params);

@@ -119,7 +119,6 @@ label.iPhoneCheckLabelOn span {
     <!--Login div-->
     <div class="clear"></div>
     <div id="versionBar">
-        <div class="copyright">&copy; 版权所有 <span class="tip"><a href="http://www.jeewx.com" title="JEEWX 捷微：敏捷微信开发">捷微 JeeWx</a> (推荐使用IE8+,谷歌浏览器可以获得更快,更安全的页面响应速度)技术支持:<a href="http://www.jeecg.org" title="JEECG 开源社区">JEECG 开源社区</a></span></div>
     </div>
    <div id="codFloat" style="display:none;">
 

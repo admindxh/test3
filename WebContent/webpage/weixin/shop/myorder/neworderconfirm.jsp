@@ -104,6 +104,7 @@
 			<h1>付款方式</h1>
 			<ul id="payment_mode" class="rd">
 				<li>
+					<label><input name="paytype" value="2" type="radio" checked="">微信支付</label>
 					<label><input name="paytype" value="1" type="radio" checked="">支付宝支付</label>
 				</li>
 			</ul>

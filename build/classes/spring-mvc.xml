@@ -7,7 +7,7 @@
        http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-3.0.xsd
          http://www.springframework.org/schema/mvc
-		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd ">
+		http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd " >
 	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
 	<!-- 加载controller的时候,不加载service,因为此时事物并未生效,若此时加载了service,那么事物无法对service进行拦截 -->
 	<context:component-scan base-package="org.jeecgframework.web.*,weixin.*">

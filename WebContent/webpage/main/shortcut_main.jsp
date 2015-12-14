@@ -3,7 +3,7 @@
 <!DOCTYPE html >
 <html>
 <head>
-<title>捷微JeeWx：免费开源微信公众账号开发平台</title>
+<title></title>
 <t:base type="jquery,easyui,tools,DatePicker,autocomplete"></t:base>
 <link rel="shortcut icon" href="images/favicon.ico">
 <style type="text/css">
@@ -201,7 +201,7 @@ a:hover {
 </div>
 <!-- 底部 -->
 <div region="south" border="false" style="height: 25px; overflow: hidden;">
-<div align="center" style="color: #CC99FF; padding-top: 2px">&copy; 版权所有 <span class="tip"><a href="http://www.jeewx.com" title="捷微JeeWx：免费开源微信公众账号开发平台">捷微JeeWx</a> (推荐谷歌浏览器，获得更快响应速度) 技术支持:<a href="http://www.jeecg.org" title="JEECG开源社区">JEECG 开源社区</a> </span></div>
+<div align="center" style="color: #CC99FF; padding-top: 2px">&copy; 版权所有 </div>
 </div>
 <div id="mm" class="easyui-menu" style="width: 150px;">
 <div id="mm-tabupdate">刷新</div>
