@@ -1,10 +1,11 @@
 package org.jeecgframework.web.system.listener;
 
+import java.net.MalformedURLException;
+
 import javax.servlet.ServletContextEvent;
 
 import org.jeecgframework.web.system.service.MenuInitService;
 import org.jeecgframework.web.system.service.SystemService;
-
 import org.jeecgframework.core.util.ResourceUtil;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -22,8 +23,21 @@ public class InitListener  implements javax.servlet.ServletContextListener {
 		
 	}
 
+	public  static String contentPath = "";
 	
 	public void contextInitialized(ServletContextEvent event) {
+		try {
+			System.out.println("--------contentpath---------"+event.getServletContext().getRealPath("/")+"============"+event.getServletContext().getResource("/").getPath());
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			contentPath  =  event.getServletContext().getResource("/").getPath() ;
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(event.getServletContext());
 		SystemService systemService = (SystemService) webApplicationContext.getBean("systemService");
 		MenuInitService menuInitService = (MenuInitService) webApplicationContext.getBean("menuInitService");

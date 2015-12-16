@@ -13,6 +13,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -230,9 +231,11 @@ public class Uploader {
 
 	private String getPhysicalPath(String path) {
 		String servletPath = this.request.getServletPath();
-		String realPath = this.request.getSession().getServletContext().getRealPath(servletPath);
+		 ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		 String rootUrl = bundler.getString("tmBaseDir");
+		String realPath = rootUrl;
 
-		return new File(realPath).getParent() + "/" + path;
+		return new File(realPath).getParent() + "" + path;
 	}
 
 	private String getParameterValue(InputStream in) {

@@ -20,9 +20,29 @@
 	
 	</head>
 	<body>
+			<div id="top"></div>
+	<div id="scnhtm5" class="m-body">
+	<div class="m-detail-mainout">
+	<div class="m-hd">
+		<div>
+			<a href="javascript:history.go(-1);" class="back">返回</a>
+		</div>
+		<div>
+			<a href="javascript:void(0);" class="cat">商品分类</a>
+		</div>
+		<div class="tit">我的订单</div>
+		<div>
+			<a href="weixinShopDealController.do?gomyorder&shopSymbol=shop&accountid=${accountId}" class="uc">用户中心</a>
+		</div>
+		<div>
+			<a href="weixinShopCartController.do?goCart&shopSymbol=shop&accountid=${accountId}" class="cart">购物车<i class="cart_com"></i></a>
+		</div>
+	</div>
 			<div>
-				订单编号:${weixinShopOrder.dealNumber }</br>
-				支付金额:${weixinShopOrder.weixinShopOrder.getSfmny() }
+			<div class="m-ck-module" style="height: 100%;">
+				<i class="d">订单编号:${weixinShopOrder.dealNumber }</i><br>
+				<i class="d">支付金额:${weixinShopOrder.getSfmny() }</i>
+				</div>
 			</div>
 			
 <script Language="javascript">
@@ -38,11 +58,11 @@
 	       },
 	       function(res){   
 	           	if(res.err_msg == "get_brand_wcpay_request:ok" ) {
-	        	   	    location.href="weixinShopDealController/success?id=${weixinShopOrder.id}&type=s";
+	        	   	    location.href="weixinShopDealController?success&id=${weixinShopOrder.id}&type=s";
 		         }
 	           	else
 			      {
-		        		location.href="weixinShopDealController/success?id=${weixinShopOrder.id}&type=f";
+		        		location.href="weixinShopDealController?success&id=${weixinShopOrder.id}&type=f";
 				  }  
 	              // 使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回    ok，但并不保证它绝对可靠。 
 	       }

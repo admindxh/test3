@@ -5,8 +5,11 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.web.system.pojo.base.TSUser;
@@ -16,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import weixin.guanjia.account.service.WeixinAccountServiceI;
 import weixin.guanjia.gzuserinfo.model.GzUserInfo;
 import weixin.guanjia.gzuserinfo.service.GzUserInfoService;
@@ -63,8 +67,9 @@ public class WeixinWallCoreController extends BaseController
     ResourceUtil.initQianTaiRequestAccountId(request);
     boolean flag = false;
     Map paras = new HashMap();
-
-    String defaultUrl = request.getServletContext().getRealPath("/template/vip/default");
+    ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+	 String rootUrl = bundler.getString("tmBaseDir");
+    String defaultUrl = rootUrl+("template/vip/default");
     if (!flag)
     {
       defaultUrl = defaultUrl + "/ftl/";

@@ -2,16 +2,21 @@ package weixin.idea.qrcode.service.impl;
 
 import java.io.File;
 import java.io.Serializable;
+import java.util.ResourceBundle;
 import java.util.UUID;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import net.sf.json.JSONObject;
+
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import weixin.guanjia.account.service.WeixinAccountServiceI;
 import weixin.guanjia.core.util.WeixinUtil;
 import weixin.idea.qrcode.entity.WeixinQrcodeEntity;
@@ -95,8 +100,10 @@ public class WeixinQrcodeServiceImpl extends CommonServiceImpl
       String qrcodeimgurl = WeixinUtil.get_qrcode_url.replace("TICKET", ticket);
 
       String filename = ResourceUtil.getShangJiaAccountId() + weixinQrcode.getSceneId() + ".jpg";
+      ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		 String rootUrl = bundler.getString("tmBaseDir");
 
-      String targetPath = request.getSession().getServletContext().getRealPath("upload/weixinqrcode") + "/" + filename;
+      String targetPath = rootUrl+("upload/weixinqrcode") + "/" + filename;
       imgurl = "upload/weixinqrcode/" + filename;
       File target = new File(targetPath);
       WeixinUtil.saveHttpImage(qrcodeimgurl, "GET", "", target);

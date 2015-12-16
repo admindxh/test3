@@ -2,8 +2,10 @@ package weixin.shop.base.controller;
 
 import java.io.PrintStream;
 import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
@@ -21,7 +23,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 import weixin.guanjia.account.entity.WeixinAccountEntity;
+import weixin.guanjia.gzuserinfo.entity.GzUserInfoYw;
+import weixin.guanjia.gzuserinfo.service.GzUserInfoService;
 import weixin.shop.base.entity.WeixinShopCartEntity;
 import weixin.shop.base.entity.WeixinShopGoodsEntity;
 import weixin.shop.base.service.WeixinShopCartServiceI;
@@ -32,6 +37,11 @@ public class WeixinShopCartController extends BaseController {
 	private static final Logger logger = Logger
 			.getLogger(WeixinShopCartController.class);
 
+	
+	@Autowired
+	private GzUserInfoService gzUserInfoService;
+	
+	
 	@Autowired
 	private WeixinShopCartServiceI weixinShopCartService;
 
@@ -90,8 +100,8 @@ public class WeixinShopCartController extends BaseController {
 		int buyNum = Integer.valueOf(request.getParameter("buyNum")).intValue();
 		String goodsId = request.getParameter("goodsId");
 
-		TSUser buyer = ResourceUtil.getSessionUserName();
-		String buyId = buyer.getId();
+		GzUserInfoYw buyer = ResourceUtil.getGzWeixinSessionUserName();
+		String buyId = buyer.getId(); 
 
 		String accountid = ResourceUtil.getQianTaiAccountId();
 		WeixinAccountEntity weixinAccount = ResourceUtil.getShangJiaAccount();
@@ -149,7 +159,7 @@ public class WeixinShopCartController extends BaseController {
 	@ResponseBody
 	public AjaxJson judgeUserLogined(HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
-		TSUser user = ResourceUtil.getSessionUserName();
+		GzUserInfoYw user = ResourceUtil.getGzWeixinSessionUserName();
 		if (user == null) {
 			j.setSuccess(false);
 		}
@@ -164,7 +174,7 @@ public class WeixinShopCartController extends BaseController {
 		int buyNum = Integer.valueOf(request.getParameter("buyNum")).intValue();
 		String goodsId = request.getParameter("goodsId");
 
-		TSUser buyer = ResourceUtil.getSessionUserName();
+		GzUserInfoYw buyer = ResourceUtil.getGzWeixinSessionUserName();
 		String buyId = buyer.getId();
 
 		String accountid = ResourceUtil.getQianTaiAccountId();
@@ -217,7 +227,7 @@ public class WeixinShopCartController extends BaseController {
 					TSUser.class, "userName", weixinAccount.getUserName());
 			String sellerId = seller.getId();
 			String hql = "from WeixinShopCartEntity where buyer.id='"
-					+ ResourceUtil.getSessionUserName().getId()
+					+ ResourceUtil.getGzWeixinSessionUserName().getId()
 					+ "' and seller.id='" + sellerId + "'";
 			System.out.println("...the hql of cart is....." + hql);
 			List<WeixinShopCartEntity> ShopCarList = this.systemService.findByQueryString(hql);

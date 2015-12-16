@@ -11,6 +11,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -478,7 +479,9 @@ public class WxZhongjiangController extends BaseController {
 		wxZhongjiangEntity2.setContent(wxZhongjiangEntity.getContent());
 
 		String contextUploadPath = "upload" + File.separator + "zhongjiang";
-		String path = request.getSession().getServletContext().getRealPath(contextUploadPath);
+		 ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		 String rootUrl = bundler.getString("tmBaseDir");
+		String path = rootUrl+contextUploadPath;
 		if ((files != null) && (files.length > 0)) {
 			for (int i = 0; i < files.length; i++) {
 				if (!files[i].isEmpty()) {

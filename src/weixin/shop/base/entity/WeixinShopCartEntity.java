@@ -1,6 +1,7 @@
 package weixin.shop.base.entity;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,10 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.annotations.GenericGenerator;
 import org.jeecgframework.web.system.pojo.base.TSUser;
+
+import weixin.guanjia.gzuserinfo.entity.GzUserInfoYw;
 
 @Entity
 @Table(name="weixin_shop_cart", schema="")
@@ -27,7 +31,7 @@ public class WeixinShopCartEntity
   private Double buyPrice;
   private Integer count;
   private Double total;
-  private TSUser buyer;
+  private GzUserInfoYw buyer;
   private TSUser seller;
   private String accountid;
 
@@ -89,16 +93,7 @@ public class WeixinShopCartEntity
     this.total = total;
   }
 
-  @OneToOne(fetch=FetchType.LAZY)
-  @JoinColumn(name="buyer_id")
-  public TSUser getBuyer()
-  {
-    return this.buyer;
-  }
-
-  public void setBuyer(TSUser buyer) {
-    this.buyer = buyer;
-  }
+ 
 
   @OneToOne(fetch=FetchType.LAZY)
   @JoinColumn(name="seller_id")
@@ -127,4 +122,16 @@ public class WeixinShopCartEntity
   public void setAccountid(String accountid) {
     this.accountid = accountid;
   }
+  @OneToOne(fetch=FetchType.LAZY)
+  @JoinColumn(name="buyer_id")
+	public GzUserInfoYw getBuyer() {
+		return buyer;
+	}
+	
+	public void setBuyer(GzUserInfoYw buyer) {
+		this.buyer = buyer;
+	}
+  
+  
+  
 }

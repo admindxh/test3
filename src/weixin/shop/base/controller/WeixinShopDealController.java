@@ -66,11 +66,13 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 
+
 import weixin.alipay.config.AlipayConfig;
 import weixin.alipay.util.AlipayCore;
 import weixin.alipay.util.AlipayNotify;
 import weixin.alipay.vo.PayParamsVo;
 import weixin.guanjia.account.entity.WeixinAccountEntity;
+import weixin.guanjia.gzuserinfo.entity.GzUserInfoYw;
 import weixin.guanjia.pay.entity.PayConfigEntity;
 import weixin.shop.base.entity.WeixinShopAddressEntity;
 import weixin.shop.base.entity.WeixinShopCartEntity;
@@ -176,13 +178,12 @@ public class WeixinShopDealController extends BaseController {
 			WeixinShopAddressEntity weixinShopAddressEntity = (WeixinShopAddressEntity) this.systemService
 					.getEntity(WeixinShopAddressEntity.class, addressId);
 
-			TSUser user = ResourceUtil.getSessionUserName();
+			GzUserInfoYw user = ResourceUtil.getGzWeixinSessionUserName();
 			weixinShopOrder.setBuyerId(user.getId());
 			weixinShopOrder.setSellerId(accountId);
 			weixinShopOrder.setBuyerLeaveWords(leaveword);
 			weixinShopOrder.setCreateDate(new Date());
-			weixinShopOrder.setCreateName(ResourceUtil.getSessionUserName()
-					.getUserName());
+			weixinShopOrder.setCreateName(user.getBzName());
 			weixinShopOrder.setDealNumber(new Date().getTime() + "");
 			weixinShopOrder.setDealStatement("未支付");
 
@@ -225,7 +226,7 @@ public class WeixinShopDealController extends BaseController {
 			WeixinAccountEntity weixinAccount = ResourceUtil
 					.getShangJiaAccount();
 			if (weixinAccount != null) {
-				String buyerId = ResourceUtil.getSessionUserName().getId();
+				String buyerId = ResourceUtil.getGzWeixinSessionUserName().getId();
 				TSUser seller = (TSUser) this.systemService
 						.findUniqueByProperty(TSUser.class, "userName",
 								weixinAccount.getUserName());
@@ -312,7 +313,7 @@ public class WeixinShopDealController extends BaseController {
 			request.setAttribute("unifiedorder", unifiedorder);
 			weixinShopOrder.setBuyerId(prepay_id);
 			request.setAttribute("weixinShopOrder", weixinShopOrder);
-			 return new ModelAndView("weixin/shop/pay/pay");
+			 return new ModelAndView("weixin/shop/myorder/weixneworderconfirm");
 			
 		}
 		
@@ -380,7 +381,7 @@ public class WeixinShopDealController extends BaseController {
 					TSUser.class, "userName", weixinAccount.getUserName());
 			String sellerId = seller.getId();
 			String hql = "from WeixinShopCartEntity where buyer.id='"
-					+ ResourceUtil.getSessionUserName().getId()
+					+ ResourceUtil.getGzWeixinSessionUserName().getId()
 					+ "' and seller.id='" + sellerId + "'";
 			System.out.println("...the hql of cart is....." + hql);
 			List<WeixinShopCartEntity> ShopCarList = this.systemService.findByQueryString(hql);
@@ -410,8 +411,8 @@ public class WeixinShopDealController extends BaseController {
 					request.getParameter("selectaddrid"));
 
 			List addresslist = this.weixinShopAddressService.findByProperty(
-					WeixinShopAddressEntity.class, "userid", ResourceUtil
-							.getSessionUserName().getId());
+					WeixinShopAddressEntity.class, "openid", ResourceUtil
+							.getGzWeixinSessionUserName().getOpenid());
 			request.setAttribute("addresslist", addresslist);
 
 			hql = "from WeixinShopCategoryEntity where accountid='"
@@ -524,7 +525,7 @@ public class WeixinShopDealController extends BaseController {
 
 	@RequestMapping(params = { "gomyorder" })
 	public ModelAndView goMyOrder(HttpServletRequest request) {
-		TSUser tsUser = ResourceUtil.getSessionUserName();
+		GzUserInfoYw tsUser = ResourceUtil.getGzWeixinSessionUserName();
 		String hql = "from WeixinShopDealEntity where buyerId='"
 				+ tsUser.getId() + "'";
 		List orderList = this.weixinShopDealService.findByQueryString(hql);

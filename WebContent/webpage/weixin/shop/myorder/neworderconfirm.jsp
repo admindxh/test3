@@ -95,7 +95,10 @@
 	            </c:if>
 	                       
 	            </li>
-	          </c:forEach>   
+	          </c:forEach>  
+	             <c:if test="${empty  addresslist}">
+	          			
+	            </c:if> 
 	            <li class="error" id="noToneTip" style="display:block;">
 	            </li>
 			</ul>

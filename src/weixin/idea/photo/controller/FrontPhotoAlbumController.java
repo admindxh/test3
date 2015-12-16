@@ -6,10 +6,13 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
@@ -31,6 +34,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
 import weixin.cms.util.CmsFreemarkerHelper;
 import weixin.guanjia.account.entity.WeixinAccountEntity;
 import weixin.idea.photo.common.PhotoConstant;
@@ -81,8 +85,9 @@ public class FrontPhotoAlbumController extends BaseController
   public void goPage(HttpServletRequest request, HttpServletResponse response, @RequestParam String page)
   {
     Map params = paramsToMap(request);
-
-    String styleUrl = request.getSession().getServletContext().getRealPath("/template/photo");
+    ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+	 String rootUrl = bundler.getString("tmBaseDir");
+    String styleUrl = rootUrl+("template/photo");
     String baseUrl = request.getContextPath();
 
     WeixinPhotoAlbumEntity photoAlbum = (WeixinPhotoAlbumEntity)this.weixinPhotoAlbumService.findUniqueByProperty(WeixinPhotoAlbumEntity.class, "accountid", params.get("accountid"));

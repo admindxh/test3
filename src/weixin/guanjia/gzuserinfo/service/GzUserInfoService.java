@@ -66,6 +66,7 @@ public class GzUserInfoService {
 		JSONObject jsonObj = WeixinUtil.httpRequest(requestUrl, "GET", requestUrl);
 //		System.out.println(jsonObj);
 		if (jsonObj != null) {
+			System.out.println(jsonObj.toString()+"===============================================jsonobj");
 			String subscribe = jsonObj.getString("subscribe");
 			String openid = jsonObj.getString("openid");
 			String nickname = jsonObj.getString("nickname") + "";
@@ -81,6 +82,7 @@ public class GzUserInfoService {
 		}
 		return null;
 	}
+	
 
 	public List<GzUserInfoYw> getGzUserList(String NEXT_OPENID, String accountId) {
 //		System.out.println("....accountId...." + accountId);
@@ -133,7 +135,7 @@ public class GzUserInfoService {
 	}
 
 	public void saveGzUserInfoByOpenId(String openid, String accountId) {
-		WeixinAccountEntity accountInfo = this.weixinAccountService.findByToUsername(accountId);
+		WeixinAccountEntity accountInfo = this.weixinAccountService.get(WeixinAccountEntity.class,accountId);
 		if ("1".equals(accountInfo.getAccounttype())) {
 			GzUserInfo gzUserInfo = getGzUserInfo(openid, accountInfo.getId());
 			if (gzUserInfo != null) {

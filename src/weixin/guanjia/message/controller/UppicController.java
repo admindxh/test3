@@ -2,6 +2,7 @@ package weixin.guanjia.message.controller;
 
 import java.io.File;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.Map.Entry;
 import java.util.UUID;
 
@@ -45,8 +46,9 @@ public class UppicController extends BaseController {
 		String base_save_path = "upload" + this.sep + day + this.sep;
 
 		String url_base_path = "upload/" + day + "/";
-
-		String save_path = path + base_save_path;
+		 ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		 String rootUrl = bundler.getString("tmBaseDir");
+		String save_path = rootUrl + base_save_path;
 		File save_folder = new File(save_path);
 		if (!save_folder.exists()) {
 			save_folder.mkdirs();

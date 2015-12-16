@@ -3,6 +3,7 @@ package weixin.guanjia.message.controller;
 import java.io.File;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.ResourceBundle;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +38,9 @@ public class CkeUploadController extends BaseController {
 		MultipartHttpServletRequest mRequest = (MultipartHttpServletRequest) request;
 
 		String day = DateUtils.date2SStr();
-
-		String path = mRequest.getSession().getServletContext().getRealPath("/");
+		ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+		String rootUrl = bundler.getString("tmBaseDir");
+		String path = rootUrl;
 
 		String base_save_path = "upload" + this.sep + day + this.sep;
 

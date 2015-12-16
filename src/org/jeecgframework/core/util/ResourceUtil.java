@@ -6,13 +6,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import org.jeecgframework.web.system.manager.ClientManager;
 import org.jeecgframework.web.system.pojo.base.Client;
 import org.jeecgframework.web.system.pojo.base.TSRoleFunction;
 import org.jeecgframework.web.system.pojo.base.TSUser;
+
 import weixin.guanjia.account.entity.WeixinAccountEntity;
+import weixin.guanjia.gzuserinfo.entity.GzUserInfoYw;
 
 public class ResourceUtil {
 	private static final ResourceBundle bundle = ResourceBundle
@@ -30,6 +34,22 @@ public class ResourceUtil {
 		}
 		return null;
 	}
+	
+	
+	public static final GzUserInfoYw getGzWeixinSessionUserName() {
+		HttpSession session = ContextHolderUtils.getSession();
+		if (session.getAttribute("WEIXIN_GZWEIXINUSER") != null) {
+			GzUserInfoYw gzuserinfoyw = (GzUserInfoYw) session
+					.getAttribute("WEIXIN_GZWEIXINUSER");
+			return gzuserinfoyw;
+		}
+		return null;
+	}
+	public static final void setGzWeixinSessionUserName(GzUserInfoYw  gzUserInfoYw) {
+		HttpSession session = ContextHolderUtils.getSession();
+		session.setAttribute("WEIXIN_GZWEIXINUSER", gzUserInfoYw);
+	}
+	
 
 	public static final TSUser setSessionUserName(TSUser user) {
 		HttpSession session = ContextHolderUtils.getSession();

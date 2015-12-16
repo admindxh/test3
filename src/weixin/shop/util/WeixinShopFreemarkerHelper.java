@@ -2,6 +2,7 @@ package weixin.shop.util;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
@@ -11,15 +12,26 @@ public class WeixinShopFreemarkerHelper
 {
   private static Configuration _tplConfig = new Configuration();
 
-  public WeixinShopFreemarkerHelper(String dir) {
+  public WeixinShopFreemarkerHelper(String dir) throws Exception {
     try {
-    	System.out.println("_tplConfig===="+_tplConfig+"tplName:-------"+dir+"======new File(dir)=="+new File(dir));
+    	System.out.println("_tplConfig===="+_tplConfig+"tplName:-------"+dir+"======new File(dir)==");
       _tplConfig.setDirectoryForTemplateLoading(new File(dir));
     }
     catch (IOException e) {
       e.printStackTrace();
     }
   }
+  final static void showAllFiles(File dir) throws Exception{
+	  File[] fs = dir.listFiles();
+	  for(int i=0; i<fs.length; i++){
+	   if(fs[i].isDirectory()){
+	    try{
+	    	System.out.println("wjj"+fs[i].getName());
+	        showAllFiles(fs[i]);
+	    }catch(Exception e){}
+	   }
+	  }
+	}
 
   public String parseTemplate(String tplName, String encoding, Map<String, Object> paras)
   {
@@ -39,6 +51,7 @@ public class WeixinShopFreemarkerHelper
 
   public String parseTemplate(String tplName, Map<String, Object> paras)
   {
+	  
     return parseTemplate(tplName, "utf-8", paras);
   }
 }

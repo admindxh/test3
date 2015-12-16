@@ -5,10 +5,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
+
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
 import org.jeecgframework.core.util.LogUtil;
+
 import weixin.guanjia.core.entity.message.resp.Article;
 import weixin.guanjia.core.entity.message.resp.NewsMessageResp;
 import weixin.guanjia.core.entity.message.resp.TextMessageResp;
@@ -38,7 +42,10 @@ public class TianQiKeyService
       Map map = new HashMap();
       Map map2 = new HashMap();
       try {
-        String filepach = request.getSession().getServletContext().getRealPath("/WEB-INF/classes/weixin");
+    	  
+    	  ResourceBundle bundler = ResourceBundle.getBundle("sysConfig");
+ 		 String rootUrl = bundler.getString("tmBaseDir");
+        String filepach = rootUrl+("WEB-INF/classes/weixin");
 
         Weather util = new Weather();
         map = util.report(keyWord, filepach);
