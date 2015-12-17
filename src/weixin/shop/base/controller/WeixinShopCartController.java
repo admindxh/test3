@@ -160,6 +160,7 @@ public class WeixinShopCartController extends BaseController {
 	public AjaxJson judgeUserLogined(HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		GzUserInfoYw user = ResourceUtil.getGzWeixinSessionUserName();
+		System.out.println("----:ResourceUtil.getGzWeixinSessionUserName()："+user);
 		if (user == null) {
 			j.setSuccess(false);
 		}

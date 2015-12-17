@@ -173,7 +173,7 @@
 						<value>weixinShopDealController.do?goConformOrder</value>
 						<value>weixinShopDealController.do?gomyorder</value>
 						<value>weixinShopDealController.do?paystatus</value>
-						<value>weixinShopDealController.do?success</value>
+						<value>weixinShopDealController.do?weixinsuccess</value>
 						
 						<!-- 刮刮乐 -->
 						<value>zpController.do?addRecord</value>

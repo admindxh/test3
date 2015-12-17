@@ -67,6 +67,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 
+
 import weixin.alipay.config.AlipayConfig;
 import weixin.alipay.util.AlipayCore;
 import weixin.alipay.util.AlipayNotify;
@@ -301,14 +302,14 @@ public class WeixinShopDealController extends BaseController {
 			UnifiedorderXML unifiedorder = new UnifiedorderXML();
 			String ip = request.getLocalAddr();
 			unifiedorder.setAttach("订单：" + weixinShopOrder.getDealNumber());
-			unifiedorder.setBody(weixinShopOrder.getCreateName() + "-" + weixinShopOrder.getDealTime());
+			unifiedorder.setBody("商品购买---"+weixinShopOrder.getDealNumber());
 	     	unifiedorder.setOpenid(ResourceUtil.getUserOpenId());
 			unifiedorder.setOut_trade_no(weixinShopOrder.getDealNumber());
 			unifiedorder.setSpbill_create_ip(ip);
 			unifiedorder.setTotal_fee(weixinShopOrder.getSfmny() * 100 + "");
 			System.out.println(weixinShopOrder.getDealNumber());
 			String prepay_id = GetPrepay(unifiedorder);
-			System.err.println(prepay_id);
+			System.out.println("prepay_id======"+prepay_id);
 			unifiedorder.setPrepay_id(prepay_id);
 			request.setAttribute("unifiedorder", unifiedorder);
 			weixinShopOrder.setBuyerId(prepay_id);
@@ -324,9 +325,14 @@ public class WeixinShopDealController extends BaseController {
 
 		return new ModelAndView("weixin/shop/pay/pay");
 	}
+	public static void main(String[] args) {
+		System.err.println(11);
+	  
+	}
+	
 	public static String GetPrepay(UnifiedorderXML unifiedorder) {
 		String xml = unifiedorder.getXml();
-		// System.err.println(xml);
+		System.out.println("xml--------"+xml);
 		String prepay_id = null;
 
 		HttpUriRequest httpUriRequest = RequestBuilder.post().setHeader(xmlHeader).setUri("https://api.mch.weixin.qq.com/pay/unifiedorder")
@@ -335,7 +341,9 @@ public class WeixinShopDealController extends BaseController {
 		try {
 			HttpResponse r = httpClient.execute(httpUriRequest);
 			String xmlrResult = EntityUtils.toString(r.getEntity(), "UTF-8");
-			System.out.println(xmlrResult);
+			System.out.println("xmlrResult=="+xmlrResult);
+		 
+			unifiedorder.setXmlResult(xmlrResult);
 			String[] xmlrResults = xmlrResult.split("<prepay_id>");
 			if (xmlrResults.length > 1) {
 				xmlrResult = xmlrResults[1];
@@ -557,7 +565,7 @@ public class WeixinShopDealController extends BaseController {
 		}
 		return params;
 	}
-	@RequestMapping("paystatus")
+	@RequestMapping(params = {"paystatus"})
 	public void paystatus(HttpServletRequest request,
 			HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -596,8 +604,8 @@ public class WeixinShopDealController extends BaseController {
 		//return new ModelAndView("weixin/shop/myorder/success");
 	}
 	
-	@RequestMapping("success")
-	public ModelAndView success(HttpServletRequest request,
+	@RequestMapping(params ={"weixinsuccess"})
+	public ModelAndView weixinsuccess(HttpServletRequest request,
 			HttpServletResponse response) {
 		String id = request.getParameter("id");
 		
