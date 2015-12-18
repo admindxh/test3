@@ -17,7 +17,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: JS增强
- * @author 张代浩
+ * @author 
  * @date 2013-08-11 09:47:30
  * @version V1.0   
  *

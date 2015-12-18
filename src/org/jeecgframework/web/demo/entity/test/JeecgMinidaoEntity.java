@@ -15,7 +15,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: Minidao例子
- * @author 张代浩
+ * @author 
  * @date 2013-12-23 21:18:59
  * @version V1.0   
  *

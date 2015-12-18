@@ -16,7 +16,7 @@ import org.jeecgframework.tag.vo.easyui.Tab;
  * 
  * 类描述：选项卡标签
  * 
- * 张代浩
+ * 
  * @date： 日期：2012-12-7 时间：上午10:17:45
  * @version 1.0
  */

@@ -29,7 +29,7 @@ import com.alibaba.fastjson.JSONObject;
  * 
  * 类描述：标签工具类
  * 
- * @author: 张代浩   
+ * @author:    
  * @date： 日期：2012-12-28 时间：上午09:58:00
  * @version 1.1
  * @author liuht 修改不能输入双引号问题解决

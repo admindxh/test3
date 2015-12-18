@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 菜单注释标签
  * 系统启动自动加载菜单配置
  * Class级别
- * @author  张代浩
+ * @author  
  */
 public @interface AutoMenu {
 	

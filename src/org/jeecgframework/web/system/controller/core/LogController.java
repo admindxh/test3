@@ -42,7 +42,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 日志处理类
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 @Controller

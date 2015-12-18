@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 @Retention(RetentionPolicy.RUNTIME)

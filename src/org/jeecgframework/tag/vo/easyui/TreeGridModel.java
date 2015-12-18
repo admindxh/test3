@@ -4,7 +4,7 @@ package org.jeecgframework.tag.vo.easyui;
  * 
  * @ClassName: TreeGridModel 
  * @Description: TODO(树形列表模型设置类) 
- * @author  张代浩 
+ * @author   
  * @date 2013-1-6 下午07:24:22 
  *
   */

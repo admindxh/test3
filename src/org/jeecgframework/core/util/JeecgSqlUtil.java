@@ -17,7 +17,7 @@ import org.jeecgframework.core.def.ConstantsDefs;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class JeecgSqlUtil {

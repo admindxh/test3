@@ -3,7 +3,7 @@ package org.jeecgframework.tag.vo.easyui;
 /**
  * Carousel
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 public class Carousel {

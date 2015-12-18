@@ -14,7 +14,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * 角色表
- *  @author  张代浩
+ *  @author  
  */
 @Entity
 @Table(name = "t_s_role")

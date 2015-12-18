@@ -7,7 +7,7 @@ import org.jeecgframework.web.cgform.exception.BusinessException;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public interface DataBaseService {

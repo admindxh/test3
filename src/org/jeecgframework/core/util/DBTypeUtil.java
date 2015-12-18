@@ -10,7 +10,7 @@ import org.jeecgframework.web.system.listener.OnlineListener;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class DBTypeUtil {

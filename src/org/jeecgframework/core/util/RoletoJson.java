@@ -12,7 +12,7 @@ import org.jeecgframework.core.common.model.json.ComboBox;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class RoletoJson {

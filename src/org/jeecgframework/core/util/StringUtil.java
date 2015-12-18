@@ -31,7 +31,7 @@ import org.dom4j.io.OutputFormat;
 
 /**
  * 字符串处理及转换工具类
- * @author  张代浩
+ * @author  
  */
 public class StringUtil {
 	private static Pattern numericPattern = Pattern.compile("^[0-9\\-]+$");

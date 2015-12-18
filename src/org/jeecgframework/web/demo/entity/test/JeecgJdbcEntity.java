@@ -15,7 +15,7 @@ import javax.persistence.SequenceGenerator;
 /**   
  * @Title: Entity
  * @Description: 通过JDBC访问数据库
- * @author 张代浩
+ * @author 
  * @date 2013-05-20 13:18:38
  * @version V1.0   
  *

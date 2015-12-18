@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 /**
  * 文件操作工具类
- * @author 张代浩
+ * @author 
  *
  */
 public class FileUtils {

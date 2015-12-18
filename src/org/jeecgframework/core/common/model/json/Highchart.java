@@ -2,7 +2,7 @@ package org.jeecgframework.core.common.model.json;
 import java.util.List;
 /**
  *  统计报表模型
- * @author 张代浩
+ * @author 
  *
  */
 public class Highchart {

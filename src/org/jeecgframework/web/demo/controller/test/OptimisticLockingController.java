@@ -29,7 +29,7 @@ import org.jeecgframework.web.demo.service.test.OptimisticLockingServiceI;
 /**   
  * @Title: Controller
  * @Description: 乐观锁测试
- * @author 张代浩
+ * @author 
  * @date 2013-06-24 14:46:42
  * @version V1.0   
  *

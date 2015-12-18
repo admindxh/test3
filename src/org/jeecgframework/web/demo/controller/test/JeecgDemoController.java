@@ -35,7 +35,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**   
  * @Title: Controller
  * @Description: 单表模型（DEMO）
- * @author 张代浩
+ * @author 
  * @date 2013-01-23 17:12:40
  * @version V1.0   
  *

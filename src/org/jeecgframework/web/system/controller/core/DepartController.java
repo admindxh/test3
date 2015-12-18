@@ -38,7 +38,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 部门信息处理类
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 @Scope("prototype")

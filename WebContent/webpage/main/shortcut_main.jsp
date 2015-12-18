@@ -132,7 +132,7 @@ a:hover {
 <div region="north" border="false" title="" style="BACKGROUND: #A8D7E9; height: 100px; padding: 1px; overflow: hidden;">
     <table width="100%" border="0" cellpadding="0" cellspacing="0">
 	<tr>
-		<td align="left" style="vertical-align: text-bottom"><img src="plug-in/weixin/logo/logo_weixin2.png"> <!--
+		<td align="left" style="vertical-align: text-bottom"><img src="plug-in/weixin/logo/logo.png"> <!--
 		        <img src="plug-in/login/images/toplogo.png" width="550" height="52" alt="">-->
 		</td>
 		<td align="right" nowrap>

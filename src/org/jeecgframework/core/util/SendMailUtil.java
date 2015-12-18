@@ -14,7 +14,7 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class SendMailUtil

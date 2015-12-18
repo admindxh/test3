@@ -54,7 +54,7 @@ import org.springframework.web.servlet.view.RedirectView;
 /**
  * 类型字段处理类
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 @Scope("prototype")

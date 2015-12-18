@@ -2933,7 +2933,7 @@ public class RepairServiceImpl extends CommonServiceImpl implements
 		scott.setOfficePhone("7496661");
 		scott.setEmail("zhangdaiscott@163.com");
 		scott.setStatus((short) 1);
-		scott.setRealName("张代浩");
+		scott.setRealName("");
 		scott.setUserName("scott");
 		scott.setPassword("97c07a884bf272b5");
 		scott.setTSDepart(RAndD);
@@ -3395,8 +3395,8 @@ public class RepairServiceImpl extends CommonServiceImpl implements
 		commonDao.saveOrUpdate(githelp);
 
 		TSAttachment settable = new TSAttachment();
-		settable.setAttachmenttitle("（张代浩）-金融服务公司机构岗位职责与任职资格设置表(根据模板填写）");
-		settable.setRealpath("（张代浩）-金融服务公司机构岗位职责与任职资格设置表(根据模板填写）");
+		settable.setAttachmenttitle("（）-金融服务公司机构岗位职责与任职资格设置表(根据模板填写）");
+		settable.setRealpath("（）-金融服务公司机构岗位职责与任职资格设置表(根据模板填写）");
 		settable.setSwfpath("upload/files/20130704201022KhdRW1Gd.swf");
 		settable.setExtend("xlsx");
 		commonDao.saveOrUpdate(settable);

@@ -12,7 +12,7 @@ import org.jeecgframework.core.util.FileUtils;
 /**
  * OFFICE文档转换服务类
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 public class OpenOfficePDFConverter implements PDFConverter {

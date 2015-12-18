@@ -12,7 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 数据库管理
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 @Controller

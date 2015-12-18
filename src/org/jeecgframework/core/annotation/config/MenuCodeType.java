@@ -2,7 +2,7 @@ package org.jeecgframework.core.annotation.config;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public enum MenuCodeType {

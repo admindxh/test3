@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * DataTables期望的返回数据格式
  * 
- * @author  张代浩
+ * @author  
  * @date 2012-7-26 上午11:23:17
  */
 public class DataTableReturn {

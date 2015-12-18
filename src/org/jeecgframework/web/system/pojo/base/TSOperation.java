@@ -11,7 +11,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * 权限操作表
- *  @author  张代浩
+ *  @author  
  */
 @Entity
 @Table(name = "t_s_operation")

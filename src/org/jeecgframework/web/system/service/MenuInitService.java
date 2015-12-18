@@ -4,7 +4,7 @@ import org.jeecgframework.core.common.service.CommonService;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public interface MenuInitService extends CommonService{

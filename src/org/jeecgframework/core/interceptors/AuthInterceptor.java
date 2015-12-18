@@ -28,7 +28,7 @@ import org.springframework.web.servlet.view.RedirectView;
 /**
  * 权限拦截器
  * 
- * @author  张代浩
+ * @author  
  * 
  */
 public class AuthInterceptor implements HandlerInterceptor {

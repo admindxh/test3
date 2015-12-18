@@ -3,7 +3,7 @@ package org.jeecgframework.core.extend.swftools;
 import org.jeecgframework.core.util.FileUtils;
 /**
  * 文件转换调用接口
- * @author 张代浩
+ * @author 
  *
  */
 public class SwfToolsUtil {

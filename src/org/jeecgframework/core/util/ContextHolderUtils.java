@@ -8,7 +8,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 /**
 * @ClassName: ContextHolderUtils 
 * @Description: TODO(上下文工具类) 
-* @author  张代浩 
+* @author   
 * @date 2012-12-15 下午11:27:39 
 *
  */

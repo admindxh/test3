@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
  * 菜单操作按钮注释标签
  * 系统启动自动加载菜单对应的操作权限
  * Method级别
- * @author  张代浩
+ * @author  
  */
 public @interface AutoMenuOperation {
 	

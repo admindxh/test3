@@ -8,7 +8,7 @@ import org.jeecgframework.web.system.pojo.base.TSFunction;
 /**
 * @ClassName: SetListSort 
 * @Description: TODO(int比较器) 
-* @author  张代浩 
+* @author   
 * @date 2013-1-31 下午06:19:03 
 *
  */

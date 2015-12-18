@@ -28,7 +28,7 @@ import org.jeecgframework.web.demo.service.test.JeecgNoteServiceI;
 /**   
  * @Title: Controller
  * @Description: 公告
- * @author 张代浩
+ * @author 
  * @date 2013-03-12 14:06:34
  * @version V1.0   
  *

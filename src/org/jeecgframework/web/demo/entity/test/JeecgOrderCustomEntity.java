@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: 订单客户信息
- * @author 张代浩
+ * @author 
  * @date 2013-03-19 22:14:01
  * @version V1.0   
  *

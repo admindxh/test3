@@ -11,7 +11,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: 表单自定义按钮
- * @author 张代浩
+ * @author 
  * @date 2013-08-07 20:16:26
  * @version V1.0   
  *

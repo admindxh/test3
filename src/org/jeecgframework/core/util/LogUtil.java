@@ -11,7 +11,7 @@ import org.apache.log4j.Priority;
 
 /**
  * 
- * @author 张代浩
+ * @author 
  *
  */
 public class LogUtil {

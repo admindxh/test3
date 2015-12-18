@@ -2,7 +2,7 @@ package org.jeecgframework.core.extend.swftools;
 
 /**
  * PDF文档转换接口
- * @author 张代浩
+ * @author 
  *
  */
 public interface PDFConverter {

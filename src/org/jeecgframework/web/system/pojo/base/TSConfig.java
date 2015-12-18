@@ -16,7 +16,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 /**
  * TConfig entity.
  * 系统配置类
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_config")

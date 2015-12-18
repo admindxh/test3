@@ -16,7 +16,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * 例子演示
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_demo")

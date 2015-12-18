@@ -20,7 +20,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * TType entity.
- *  @author  张代浩
+ *  @author  
  */
 @Entity
 @Table(name = "t_s_opintemplate")

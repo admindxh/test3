@@ -40,7 +40,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 菜单权限处理类
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 @Scope("prototype")

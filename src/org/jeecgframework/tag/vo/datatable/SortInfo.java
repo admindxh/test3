@@ -2,7 +2,7 @@ package org.jeecgframework.tag.vo.datatable;
 
 /**
  * 排序值
- * @author  张代浩
+ * @author  
  * @date 2012-7-26 下午3:07:40
  */
 public class SortInfo {

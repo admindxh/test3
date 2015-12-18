@@ -13,7 +13,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: Blob型数据操作例子
- * @author 张代浩
+ * @author 
  * @date 2013-06-07 14:46:09
  * @version V1.0   
  *

@@ -17,7 +17,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 /**   
  * @Title: Entity
  * @Description: Excel导出
- * @author 张代浩
+ * @author 
  * @date 2013-03-23 21:45:28
  * @version V1.0   
  *

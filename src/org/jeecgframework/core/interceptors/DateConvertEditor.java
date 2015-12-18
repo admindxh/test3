@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class DateConvertEditor extends PropertyEditorSupport {

@@ -3,7 +3,7 @@ package org.jeecgframework.tag.vo.easyui;
 /**
  * TAB模型
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 public class Tab {

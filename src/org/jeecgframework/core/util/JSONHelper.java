@@ -22,7 +22,7 @@ import net.sf.json.JSONObject;
 
 /**
  * JSON和JAVA的POJO的相互转换
- * @author  张代浩
+ * @author  
  * JSONHelper.java
  */
 public final class JSONHelper {

@@ -53,7 +53,7 @@ import weixin.util.WeiXinConstants;
 
 /**
  * 登陆初始化控制器
- * @author 张代浩
+ * @author 
  * 
  */
 @Scope("prototype")

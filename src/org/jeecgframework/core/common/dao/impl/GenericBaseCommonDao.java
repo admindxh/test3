@@ -64,7 +64,7 @@ import org.springframework.util.Assert;
  * 
  * 类描述： DAO层泛型基类
  * 
- * 张代浩
+ * 
  * @date： 日期：2012-12-7 时间：上午10:16:48
  * @param <T>
  * @param <PK>

@@ -7,7 +7,7 @@ import org.jeecgframework.core.util.ResourceUtil;
 * 项目名称：jeecg
 * 类名称：Globals   
 * 类描述：  全局变量定义
-* 创建人： 张代浩      
+* 创建人：       
 * @version    
 *
  */

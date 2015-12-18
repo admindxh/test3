@@ -31,7 +31,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**   
  * @Title: Controller
  * @Description: 页面不用自定义标签
- *@author  张代浩
+ *@author  
  */
 @Scope("prototype")
 @Controller

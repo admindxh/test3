@@ -13,7 +13,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * TLog entity.
- *  @author  张代浩
+ *  @author  
  */
 @Entity
 @Table(name = "t_s_log")

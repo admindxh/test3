@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 /**
  * 文档下载,新闻,法规表
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_document")

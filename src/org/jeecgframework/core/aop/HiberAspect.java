@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 /**
  * Hiberate拦截器：实现创建人，创建时间，创建人名称自动注入;
  *                修改人,修改时间,修改人名自动注入;
- * @author  张代浩
+ * @author  
  */
 @Component
 public class HiberAspect extends EmptyInterceptor {

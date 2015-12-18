@@ -16,7 +16,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  *菜单权限表
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_function")

@@ -12,7 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: Word转Ftl
- * @author 张代浩
+ * @author 
  * @date 2013-07-03 17:42:06
  * @version V1.0   
  *

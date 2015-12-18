@@ -31,7 +31,7 @@ import org.jeecgframework.web.cgreport.entity.core.CgreportConfigItemEntity;
 /**   
  * @Title: Controller
  * @Description: 动态报表配置抬头
- * @author 张代浩
+ * @author 
  * @date 2013-12-07 16:00:21
  * @version V1.0   
  *

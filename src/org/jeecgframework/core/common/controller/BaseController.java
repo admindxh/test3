@@ -20,7 +20,7 @@ import org.springframework.web.context.ServletConfigAware;
 
 /**
  * 基础控制器，其他控制器需集成此控制器获得initBinder自动转换的功能
- * @author  张代浩
+ * @author  
  * 
  */
 public class BaseController  implements ServletConfigAware{

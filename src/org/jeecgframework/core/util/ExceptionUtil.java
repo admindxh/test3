@@ -5,7 +5,7 @@ import java.io.StringWriter;
 
 /**
  * Exception工具类
- * @author  张代浩
+ * @author  
  */
 public class ExceptionUtil {
 

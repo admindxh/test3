@@ -12,7 +12,7 @@ import javax.persistence.Table;
 /**   
  * @Title: Entity
  * @Description: WebOffice例子
- * @author 张代浩
+ * @author 
  * @date 2013-07-08 10:54:19
  * @version V1.0   
  *

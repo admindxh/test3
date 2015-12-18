@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import org.jeecgframework.core.common.entity.IdEntity;
 /**
  * 程序版本控制表
- * @author 张代浩
+ * @author 
  *
  */
 @Entity

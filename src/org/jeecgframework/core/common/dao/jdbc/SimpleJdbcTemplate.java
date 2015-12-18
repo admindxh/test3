@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.util.Assert;
 /**
  * jdbc模板
- * @author  张代浩
+ * @author  
  *
  */
 @SuppressWarnings("unchecked")

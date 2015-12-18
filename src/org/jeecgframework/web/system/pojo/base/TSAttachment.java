@@ -16,7 +16,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 
 /**
- * @author  张代浩
+ * @author  
  * 项目附件父表(其他附件表需继承该表)
  */
 @Entity

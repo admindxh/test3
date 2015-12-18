@@ -14,7 +14,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * 系统用户父类表
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_base_user")

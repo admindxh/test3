@@ -16,7 +16,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  * 部门机构表
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_depart")

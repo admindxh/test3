@@ -2,7 +2,7 @@ package org.jeecgframework.core.def;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public final class ConstantsDefs {

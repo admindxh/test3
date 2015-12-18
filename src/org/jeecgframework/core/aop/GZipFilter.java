@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  * JS缓存压缩
  * JEECG开源社区
  * 论坛：www.jeecg.org
- * @author  张代浩
+ * @author  
  */
 public class GZipFilter implements Filter {
 

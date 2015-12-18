@@ -2,7 +2,7 @@ package org.jeecgframework.web.system.pojo.base;
 
 /**
  *@类:DuplicateCheckPage
- *@作者:张代浩
+ *@作者:
  *@E-mail:zhangdaiscott@163.com
  *@日期:2012-11-15
  *update-begin--Author:yankang  Date:201309012 for：[TASK#63]UI库常用控件参考示例【重复校验】

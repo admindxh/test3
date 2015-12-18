@@ -12,7 +12,7 @@ import org.jeecgframework.web.system.pojo.base.TSFunction;
 /**
  * 动态菜单栏生成
  * 
- * @author 张代浩
+ * @author 
  * 
  */
 public class ListtoMenu {

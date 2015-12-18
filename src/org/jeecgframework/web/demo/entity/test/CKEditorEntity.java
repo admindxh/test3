@@ -15,7 +15,7 @@ import javax.persistence.SequenceGenerator;
 /**   
  * @Title: Entity
  * @Description: HTML 编辑器
- * @author 张代浩
+ * @author 
  * @date 2013-07-08 16:19:21
  * @version V1.0   
  *

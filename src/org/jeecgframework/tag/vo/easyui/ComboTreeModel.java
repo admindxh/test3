@@ -4,7 +4,7 @@ package org.jeecgframework.tag.vo.easyui;
  /**
  * @ClassName: ComboTreeModel 
  * @Description: TODO(下拉树形选择框模型设置类) 
- * @author  张代浩
+ * @author  
  * @date 2013-1-6 下午07:24:22 
  *
   */

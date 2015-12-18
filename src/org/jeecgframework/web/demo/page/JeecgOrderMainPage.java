@@ -9,7 +9,7 @@ import org.jeecgframework.web.demo.entity.test.JeecgOrderProductEntity;
 /**   
  * @Title: Entity
  * @Description: 订单信息 VO
- * @author 张代浩
+ * @author 
  * @date 2013-03-19 22:01:34
  * @version V1.0   
  *

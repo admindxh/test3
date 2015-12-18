@@ -15,7 +15,7 @@ import org.jeecgframework.core.common.entity.IdEntity;
 
 /**
  *地域管理表
- * @author  张代浩
+ * @author  
  */
 @Entity
 @Table(name = "t_s_territory")

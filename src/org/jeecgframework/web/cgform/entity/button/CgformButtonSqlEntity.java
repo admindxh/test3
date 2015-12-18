@@ -12,7 +12,7 @@ import org.hibernate.annotations.GenericGenerator;
 /**   
  * @Title: Entity
  * @Description: 按钮sql增强
- * @author 张代浩
+ * @author 
  * @date 2013-08-07 23:09:23
  * @version V1.0   
  *

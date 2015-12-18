@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * 字符集拦截器
  * 
- * @author  张代浩
+ * @author  
  * 
  */
 public class EncodingInterceptor implements HandlerInterceptor {

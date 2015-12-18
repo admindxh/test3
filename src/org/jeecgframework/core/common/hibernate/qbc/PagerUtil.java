@@ -5,7 +5,7 @@ import java.util.Map;
 import org.omg.CORBA.PUBLIC_MEMBER;
 /**
  *类描述：分页工具类
- *张代浩
+ *
  *@date： 日期：2012-12-7 时间：上午10:19:14
  *@version 1.0
  */

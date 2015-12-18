@@ -11,7 +11,7 @@ import org.jeecgframework.core.util.StringUtil;
 
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class CkeditorTag extends TagSupport {

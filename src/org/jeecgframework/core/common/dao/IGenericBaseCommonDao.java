@@ -19,7 +19,7 @@ import org.springframework.dao.DataAccessException;
  * 
  * 类描述：DAO层泛型基类接口
  * 
- * 张代浩
+ * 
  * @date： 日期：2012-12-8 时间：下午05:37:33
  * @version 1.0
  */

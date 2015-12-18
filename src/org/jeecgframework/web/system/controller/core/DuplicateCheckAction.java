@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**   
  * @Title: Action
  * @Description: 校验工具Action
- * @author 张代浩
+ * @author 
  * @date 2013-09-12 22:27:30
  * @version V1.0   
  */

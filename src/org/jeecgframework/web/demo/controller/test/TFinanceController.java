@@ -36,7 +36,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**   
  * @Title: Controller
  * @Description: 资金管理
- * @author 张代浩
+ * @author 
  * @date 2013-06-27 00:10:59
  * @version V1.0   
  *

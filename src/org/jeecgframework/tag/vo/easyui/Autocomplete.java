@@ -1,7 +1,7 @@
 package org.jeecgframework.tag.vo.easyui;
 /**
  * 
- * @author  张代浩
+ * @author  
  *
  */
 public class Autocomplete {

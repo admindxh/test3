@@ -13,7 +13,7 @@ import org.jeecgframework.core.util.StringUtil;
  * 
  * 自动补全
  * jquery ui Autocomplete
- * @author:  张代浩
+ * @author:  
  * @date： 日期：2012-12-7 时间：上午10:17:45
  * @version 1.0
  */
