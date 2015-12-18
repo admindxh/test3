@@ -9,7 +9,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 
 public class UnifiedorderXML {
 
-	private String appid = "wx7b5f2cb8155089c9"; // appid
+	private String appid = "wx60948a85e051f738"; // appid
 	private String mch_id = "1265872901"; // 微信支付商户号
 	private String key = "wwwsnbabacn20151207weixinzhifu00"; // API密钥
 	private String notify_url = "http:/e.rimicloud.com/jeecgwx/weixinShopCartController.do";
