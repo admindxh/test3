@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50022
 File Encoding         : 65001
 
-Date: 2015-12-18 17:16:02
+Date: 2015-12-21 09:43:44
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2708,6 +2708,13 @@ INSERT INTO t_s_log VALUES ('402886bd51b44c980151b458cf22000d', 'Chrome', '相�
 INSERT INTO t_s_log VALUES ('402886bd51b44c980151b458dae5000e', 'Chrome', '相片删除成功', '4', '192.168.6.61', '2015-12-18 17:08:20', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('402886bd51b44c980151b45a4bc9000f', 'Chrome', '权限: 业务扩展接口管理被删除成功', '4', '192.168.6.61', '2015-12-18 17:09:55', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('402886bd51b44c980151b45bd50b0010', 'Chrome', '微站点信息更新成功', '5', '192.168.6.61', '2015-12-18 17:11:35', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51b44c980151b46095500011', 'Chrome', '用户admin已退出', '2', '192.168.6.61', '2015-12-18 17:16:47', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51b44c980151b46117400012', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-12-18 17:17:20', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51c214d70151c21d84610000', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-12-21 09:18:13', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51c214d70151c21d88550001', 'Chrome', '用户: admin[信息部]登录成功', '1', '192.168.6.61', '2015-12-21 09:18:14', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51c214d70151c21f14cb0002', 'Chrome', '删除会员卡菜单信息数据', '4', '192.168.6.61', '2015-12-21 09:19:55', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51c214d70151c21f30030003', 'Chrome', '删除微官网菜单信息数据', '4', '192.168.6.61', '2015-12-21 09:20:02', '1', '4028d881436d514601436d5215ac0043');
+INSERT INTO t_s_log VALUES ('402886bd51c214d70151c21f4ad60004', 'Chrome', '同步菜单信息数据成功！', '4', '192.168.6.61', '2015-12-21 09:20:09', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a1d8301471a1e409b0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 15:54:56', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a20e301471a21ef3d0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 15:58:57', '1', '4028d881436d514601436d5215ac0043');
 INSERT INTO t_s_log VALUES ('40288904471a240e01471a25aefb0000', 'Firefox', '用户: admin[信息部]登录成功', '1', '192.168.9.132', '2014-07-09 16:03:03', '1', '4028d881436d514601436d5215ac0043');
@@ -4524,7 +4531,7 @@ CREATE TABLE `weixin_account` (
 -- ----------------------------
 -- Records of weixin_account
 -- ----------------------------
-INSERT INTO weixin_account VALUES ('402881e8461795c201461795c2e90000', '成都永辉科技有限公司', 'dxhnihao', 'gh_b2a51a1013e8', '1', '652356756@@qq.com', '无', 'Arx9uQ7iMpeO_NVHDWn71ThonnflEye5y3kkIa0LSlIzBiZ5cZEVcH3DHAnEWGY81CEJhw2AFp8bPqca6wdC6J1v3kVCNKT9mq-C5HN9qyYKXOgAHAREV', 'wx60948a85e051f738', 'e23379551673977d2fb4419d86466577', '2015-12-17 15:04:14', 'admin', 'gh_b2a51a1013e8');
+INSERT INTO weixin_account VALUES ('402881e8461795c201461795c2e90000', '成都永辉科技有限公司', 'dxhnihao', 'gh_b2a51a1013e8', '1', '652356756@@qq.com', '无', 'HwK_hemrKti-zj3dIrf-z_clxJaZRSXRqPIwQovq9NoZNqKhy-aUhmb8GYUOLpGJZI-IuMR6xBcVjY71PTU5xrLeLmd3oOwogJInRPPnTSUPVUgAJACIH', 'wx60948a85e051f738', 'e23379551673977d2fb4419d86466577', '2015-12-21 09:20:08', 'admin', 'gh_b2a51a1013e8');
 
 -- ----------------------------
 -- Table structure for `weixin_around`
@@ -5229,7 +5236,6 @@ CREATE TABLE `weixin_menuentity` (
 -- ----------------------------
 -- Records of weixin_menuentity
 -- ----------------------------
-INSERT INTO weixin_menuentity VALUES ('402880e648138dba014813a31c240015', 'huiyuan', 'expand', '会员卡', '2', '402880e648138dba0148139d84560007', 'click', '', '402889ff4728f237014728f2d39f0001', '402881e8461795c201461795c2e90000');
 INSERT INTO weixin_menuentity VALUES ('402880e648138dba014813a69b7e001e', 'liuyan', null, '微留言', '5', null, 'view', 'http://www.jeewx.com/jeewx/cmsController.do?goPage&page=leaveMsg', '402889ff4728f237014728f2d39f0001', '402881e8461795c201461795c2e90000');
 INSERT INTO weixin_menuentity VALUES ('402881e4464d026901464d05ab600001', 'c02', 'text', '公司动态', '1', 'f7a8a3a946e249c20146e25c4dc7000c', 'click', '', null, '402881e8461795c201461795c2e90000');
 INSERT INTO weixin_menuentity VALUES ('402881e4464df45f01464df707760004', 'c0202', 'expand', '微商城', '0', '402881e9470273d2014702a94a1b001d', 'click', 'http://123.165.130.173/jeecg-weixin-steward/webpage/weixin/guanjia/other/dazhuanpan/index.html', '402889ff4728f237014728f2d39f0001', '402881e8461795c201461795c2e90000');
@@ -5238,7 +5244,6 @@ INSERT INTO weixin_menuentity VALUES ('402889ff4728a293014728bcb3020038', 'c0302
 INSERT INTO weixin_menuentity VALUES ('402889ff4728f237014728f2d39f0001', 'c01', null, '高级功能', '1', null, 'click', '', null, '402881e8461795c201461795c2e90000');
 INSERT INTO weixin_menuentity VALUES ('402889ff4728f237014729029d940010', 'c0204', 'news', '公司动态', '1', '4028d881472f356e01472f36461b0001', 'click', '', '402881e4464d026901464d05ab600001', '402881e8461795c201461795c2e90000');
 INSERT INTO weixin_menuentity VALUES ('f7a8a3a9487816f801487822acec0062', 'lxwm', 'text', '联系我们', '1', '2c91811a4d60d054014d65a2caa1002f', 'click', 'http://www.jeewx.com/jeewx/wxZhongjiangController.do?index', '402889ff4728a293014728bc62250036', '402881e8461795c201461795c2e90000');
-INSERT INTO weixin_menuentity VALUES ('f7a8a3a9487816f801487843245200a4', 'pk', 'expand', '微官网', '2', 'f7a8a3a9487816f80148783f040c009d', 'view', 'http://yhsoft.duapp.com/', '402889ff4728a293014728bc62250036', '402881e8461795c201461795c2e90000');
 
 -- ----------------------------
 -- Table structure for `weixin_newsitem`

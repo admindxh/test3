@@ -162,7 +162,8 @@ public class WeixinShopCartController extends BaseController {
 		GzUserInfoYw user = ResourceUtil.getGzWeixinSessionUserName();
 		System.out.println("----:ResourceUtil.getGzWeixinSessionUserName()："+user);
 		if (user == null) {
-			j.setSuccess(false);
+			//开发阶段放开
+			//j.setSuccess(false);
 		}
 		return j;
 	}
@@ -176,7 +177,11 @@ public class WeixinShopCartController extends BaseController {
 		String goodsId = request.getParameter("goodsId");
 
 		GzUserInfoYw buyer = ResourceUtil.getGzWeixinSessionUserName();
-		String buyId = buyer.getId();
+		String buyId = "";
+		if (buyer!=null) {
+			
+			buyId = buyer.getId();
+		}
 
 		String accountid = ResourceUtil.getQianTaiAccountId();
 		WeixinAccountEntity weixinAccount = ResourceUtil.getShangJiaAccount();

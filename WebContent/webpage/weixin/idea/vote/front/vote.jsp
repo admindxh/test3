@@ -56,7 +56,7 @@
 
 
  	<p class="page-url">
-		<a href="http://www.jeewx.com/" target="_blank" class="page-url-link">永辉团队</a>
+		<a href="#" target="_blank" class="page-url-link">永辉团队</a>
 	</p>
 
 

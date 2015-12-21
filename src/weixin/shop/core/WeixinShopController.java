@@ -85,6 +85,11 @@ public class WeixinShopController extends BaseController
     	  gzUserInfoService.saveGzUserInfoByOpenId(openId, accountId);
     	  localUserinfo =  gzUserInfoService.getLocalUserinfo(openId, accountId);
       }
+      if (localUserinfo==null) {
+	     openId = "oxIKHuLHuof1zl0h1P8dyKj1r6as";
+	     gzUserInfoService.saveGzUserInfoByOpenId(openId, accountId);
+   	     localUserinfo =  gzUserInfoService.getLocalUserinfo(openId, accountId);
+	  }
       System.out.println("初始化前台用户:WEIXIN_GZWEIXINUSER:---"+localUserinfo);
       session.setAttribute("WEIXIN_GZWEIXINUSER", localUserinfo);
       

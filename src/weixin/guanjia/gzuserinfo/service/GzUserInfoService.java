@@ -66,19 +66,27 @@ public class GzUserInfoService {
 		JSONObject jsonObj = WeixinUtil.httpRequest(requestUrl, "GET", requestUrl);
 //		System.out.println(jsonObj);
 		if (jsonObj != null) {
-			System.out.println(jsonObj.toString()+"===============================================jsonobj");
-			String subscribe = jsonObj.getString("subscribe");
-			String openid = jsonObj.getString("openid");
-			String nickname = jsonObj.getString("nickname") + "";
-			String sex = jsonObj.getString("sex");
-			String city = jsonObj.getString("city");
-			String province = jsonObj.getString("province");
-			String country = jsonObj.getString("country");
-			String headimgurl = jsonObj.getString("headimgurl");
-			String subscribe_time = jsonObj.getString("subscribe_time");
-			GzUserInfo userInfo = new GzUserInfo(subscribe, openid, nickname, sex, city, province, country, headimgurl,
-					subscribe_time);
-			return userInfo;
+			try {
+				System.out
+						.println(jsonObj.toString()
+								+ "===============================================jsonobj");
+				String subscribe = jsonObj.getString("subscribe");
+				String openid = jsonObj.getString("openid");
+				String nickname = jsonObj.getString("nickname") + "";
+				String sex = jsonObj.getString("sex");
+				String city = jsonObj.getString("city");
+				String province = jsonObj.getString("province");
+				String country = jsonObj.getString("country");
+				String headimgurl = jsonObj.getString("headimgurl");
+				String subscribe_time = jsonObj.getString("subscribe_time");
+				GzUserInfo userInfo = new GzUserInfo(subscribe, openid,
+						nickname, sex, city, province, country, headimgurl,
+						subscribe_time);
+				return userInfo;
+			} catch (Exception e) {
+				// TODO: handle exception
+				return  null;
+			}
 		}
 		return null;
 	}

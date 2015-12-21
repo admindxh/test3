@@ -20,6 +20,6 @@
 </script>
 </body>
 <head>
-<title>JEECG 初始化数据库</title>
+<title>初始化数据库</title>
 </head>
 </html>

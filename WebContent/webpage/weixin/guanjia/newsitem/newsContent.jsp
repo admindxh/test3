@@ -68,11 +68,11 @@
                     <div class="text" id="js_content">
                         ${newsItem.content}
                     </div>
-                    <!-- <p class="page-toolbar" id="js_toobar">
-                        <a href="http://www.jeewx.com" class="page-imform">
+                    <p class="page-toolbar" id="js_toobar">
+                        <a href="#" class="page-imform">
                          	 永辉团队
                         </a>
-                    </p> -->
+                    </p> 
                 </div>
             </div>
             <!-- <div id="js_pc_qr_code" class="pc_code" style="display: block;">
