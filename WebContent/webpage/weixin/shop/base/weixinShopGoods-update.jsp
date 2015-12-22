@@ -300,7 +300,7 @@
 						</td>
 						<td class="value">
 						     	 <input id="categoryid" name="weixinShopCategory.id" type="hidden" value="${weixinShopGoodsPage.weixinShopCategory.id }" style="width: 150px" class="inputxt" ><input id="categoryname" name="categoryname" value="${weixinShopGoodsPage.weixinShopCategory.name}" type="text" style="width: 150px" class="inputxt" >
-					     	 <t:choose hiddenName="categoryid" hiddenid="id" url="weixinShopGoodsController.do?categoryList" name="categoryList" inputTextname="categoryname" icon="icon-search" title="角色列表" textname="name" isclear="true"></t:choose>
+					     	 <t:choose hiddenName="categoryid" hiddenid="id" url="weixinShopGoodsController.do?categoryList" name="categoryList" inputTextname="categoryname" icon="" title="商品分类列表" textname="name" isclear="true"></t:choose>
 								<span class="Validform_checktip"></span>
 								<label class="Validform_label" style="display: none;">所属分类</label>
 						</td>

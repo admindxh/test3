@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
  <link type="text/css" rel="stylesheet" href="./plug-in/weixin/css/style.css">
-     <div class="funcList" id="func">
-            <ul class="list">
+     <div class="funcList" id="func" >
+            <ul class="list" style="overflow: scroll;height: 600px;">
             	<a href="cmsController.do?goPage&page=index&accountid=${sessionScope.WEIXIN_ACCOUNT.id}" target="_blank">
 	                <li>
 	                    <img src="./plug-in/weixin/img/func01.jpg" width="104" height="107">
@@ -30,28 +30,9 @@
                     	<p>各行各业<br> 照片展现轻松搞定</p>
                 	</li>
                 </a>
-                <a href="newsTemplateController.do?list" target="_blank">
-	                <li>
-	                    <img src="./plug-in/weixin/img/func05.jpg">
-	                    <h3>图文推送</h3>
-	                    <p>定期推送，图文并<br>茂，免费发布</p>
-	                </li>
-                </a>
-                <li>
-                 <a href="menuManagerController.do?list&clickFunctionId=4028d881436d514601436d5884be019d" target="_blank">
-                    <img src="./plug-in/weixin/img/func06.jpg">
-                    <h3>自定义菜单</h3>
-                    <p>通过形象的菜单界面引导顾客进行微信互动操作。
- 					</a>
-					</p>
-                </li>
-                <li>
-                   <a href="autoResponseController.do?list&clickFunctionId=402881e8460d7e5301460d81c7a60001" target="_blank">
-                    <img src="./plug-in/weixin/img/func07.jpg">
-                    <h3>智能客服</h3>
-                    <p>通过便捷关键词回复<br>轻松设置</p>
-                    </a>
-                </li>
+                
+               
+                
                 <li>
                     <a href="zpController.do?goZhuanpan&accountid=${sessionScope.WEIXIN_ACCOUNT.id}&openid=oGCDRjvr9L1NoqxbyXLReCVYVyV0" target="_blank">
                     <img  src="./plug-in/weixin/img/func08.jpg">
@@ -59,11 +40,7 @@
                     <p>快乐大转盘<br>幸运落谁家</p>
                     </a>
                 </li>
-                <li>
-                    <img src="./plug-in/weixin/img/func09.jpg">
-                    <h3>优惠券</h3>
-                    <p>电子优惠券利益客户<br>又节约营销预算</p>
-                </li>
+                
                 <li>
                 	<a href="zpController.do?goGglNew&accountid=${sessionScope.WEIXIN_ACCOUNT.id}&openid=oGCDRjvr9L1NoqxbyXLReCVYVyV0" target="_blank">
                     <img src="./plug-in/weixin/img/func10.jpg">
@@ -85,11 +62,7 @@
                     <p>商家设置好题目，<br> 用户通过微信问答</p>
                  </a>
                 </li>
-	                <li>
-	                    <img src="./plug-in/weixin/img/func12.jpg">
-	                    <h3>微支付</h3>
-	                    <p>扩展支付宝，微信等多种支付方式 </p>
-	                </li>
+	                
 	            <a href="cmsController.do?goPage&page=leaveMsg&accountid=${sessionScope.WEIXIN_ACCOUNT.id}" target="_blank">
                		<li>
                     	<img src="./plug-in/weixin/img/func13.jpg">
@@ -97,11 +70,7 @@
                     	<p>各种预约留言 一键即可<br>短信邮件会立即通知商户 </p>
                 	</li>
                 </a>
-                <li>
-                    <img src="./plug-in/weixin/img/func14.jpg">
-                    <h3>微信墙 </h3>
-                    <p>活跃现场气氛，让粉丝涨起来</p>
-                </li>
+               
                	<a href="bbsController.do?goPage&page=index&accountid=${sessionScope.WEIXIN_ACCOUNT.id}" target="_blank">
                 	<li>
                     	<img src="./plug-in/weixin/img/func15.jpg">

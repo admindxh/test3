@@ -41,7 +41,7 @@
 			<div>
 			<div class="m-ck-module" style="height: 100%;">
 				<i class="d">订单编号:${weixinShopOrder.dealNumber }</i><br>
-				<i class="d">支付金额:${weixinShopOrder.getSfmny() }</i>
+				<i class="d">支付金额:${weixinShopOrder.sfmny }</i>
 				
 				</div>
 				
