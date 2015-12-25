@@ -50,7 +50,7 @@
 				 </div>
 				 <div class="tit">订单列表</div>
 				 <div>
-				     <a href="weixinVipController.do?goPage&page=index&shopSymbol=shop" class="uc">用户中心</a>
+				     <a href="href="weixinVipController.do?goPage&page=index&openid=1234&accountid=402881e8461795c201461795c2e90000"  class="uc">用户中心</a>
 				 </div>
 				 <div>
 				     <a href="weixinShopCartController.do?goCart&shopSymbol=shop" class="cart">购物车<i class="cart_com"></i></a>
