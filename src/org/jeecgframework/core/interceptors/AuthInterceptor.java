@@ -62,7 +62,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 	}
 
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object object, ModelAndView modelAndView) throws Exception {
-
+		
 	}
 
 	/**
@@ -74,6 +74,7 @@ public class AuthInterceptor implements HandlerInterceptor {
 		HttpSession session = ContextHolderUtils.getSession();
 		Client client = ClientManager.getInstance().getClient(session.getId());
 		if(client == null){ 
+			response.sendRedirect("/loginController.do?login");
 			client = ClientManager.getInstance().getClient(
 					request.getParameter("sessionId"));
 		}
